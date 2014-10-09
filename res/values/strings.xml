@@ -9,5 +9,7 @@
     <string name="title_activity_category">Category</string>
     <string name="title_activity_say_noun">SayNoun</string>
     <string name="title_activity_play">Play</string>
+    <string name="title_activity_name">Kidlibs</string>
+    <string name="title_activity_story_name">Kidlibs</string>
 
 </resources>

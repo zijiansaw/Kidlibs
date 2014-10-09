@@ -1,12 +1,18 @@
 package drake.edu.project2;
 
 import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 public class SayNoun extends ActionBarActivity {
-
+	
+	public void sendMessage(View view){
+		Intent intent = new Intent(this,Play.class);
+		startActivity(intent);
+	}	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

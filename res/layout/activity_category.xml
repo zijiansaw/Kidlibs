@@ -14,8 +14,9 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/button1"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="26dp"
-        android:text="Zoo" />
+        android:layout_marginBottom="14dp"
+        android:text="Zoo" 
+        android:onClick="sendMessage1"/>
 
     <Button
         android:id="@+id/button4"
@@ -23,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/button1"
         android:layout_alignLeft="@+id/button1"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="14dp"
         android:text="Space" />
 
     <Button

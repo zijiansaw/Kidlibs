@@ -27,8 +27,7 @@
         android:layout_marginBottom="88dp"
         android:gravity="center"
         android:text="@string/Kidlibs"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:onClick="sendMessage1" />
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
 
     <Button
         android:id="@+id/makestory"
@@ -37,6 +36,7 @@
         android:layout_above="@+id/library"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="16dp"
-        android:text="Make a Story!" />
+        android:text="Make a Story!"
+		android:onClick="sendMessage1"/>
 
 </RelativeLayout>

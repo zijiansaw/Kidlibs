@@ -10,12 +10,12 @@ import android.view.View;
 
 public class MainActivity extends ActionBarActivity {
 
-	public void sendMessage1(View view){
+	public void sendMessage2(View view){
 		Intent intent = new Intent(this,MyLibrary.class);
 		startActivity(intent);
 	}	
 	
-	public void sendMessage2(View view){
+	public void sendMessage1(View view){
 		Intent intent = new Intent(this,Category.class);
 		startActivity(intent);
 	}	

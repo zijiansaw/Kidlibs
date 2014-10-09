@@ -8,9 +8,33 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="drake.edu.project2.Play" >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+   <Button
+       android:id="@+id/library"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_alignLeft="@+id/textView1"
+       android:layout_alignParentBottom="true"
+       android:layout_marginBottom="46dp"
+       android:onClick="sendMessage"
+       android:text="Save your Story!" />
+
+   <TextView
+       android:id="@+id/textView1"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_alignParentTop="true"
+       android:layout_centerHorizontal="true"
+       android:layout_marginTop="44dp"
+       android:gravity="center"
+       android:text="Do you want to listen to your story?"
+       android:textAppearance="?android:attr/textAppearanceLarge" />
+
+   <ImageView
+       android:id="@+id/imageView1"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_centerHorizontal="true"
+       android:layout_centerVertical="true"
+       android:src="@drawable/play1" />
 
 </RelativeLayout>
