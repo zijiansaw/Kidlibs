@@ -1,35 +1,22 @@
 package drake.edu.project2;
 
-
 import android.support.v7.app.ActionBarActivity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
-public class MainActivity extends ActionBarActivity {
+public class MyLibrary extends ActionBarActivity {
 
-	public void sendMessage1(View view){
-		Intent intent = new Intent(this,MyLibrary.class);
-		startActivity(intent);
-	}	
-	
-	public void sendMessage2(View view){
-		Intent intent = new Intent(this,Category.class);
-		startActivity(intent);
-	}	
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_my_library);
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
+		getMenuInflater().inflate(R.menu.my_library, menu);
 		return true;
 	}
 
