@@ -9,81 +9,114 @@ public class Story {
 	/**
 	 * Each story should just be a list of prompts
 	 */
-	Vector <Prompt> myStory = new Vector<Prompt>();
+	Vector <Prompt> myPromptList = new Vector<Prompt>();
 	public int category;
-	public Story(){
-		 int rand =  (int)(Math.random()*3);
-		//beach
-		if(category==0){
-			//randomly choose a story from the 4 beach
-			 if(rand==0){
-				 myStory = getStory1();
-			 }
-			 else if (rand ==1){
-				  myStory = getStory2();
-			 }
-			 else if(rand ==2){
-				  myStory = getStory3();
-			 }
-		}
-		//safari
-		else if(category ==2){
-			 if(rand==0){
-				  myStory = getSafariStory1();
-			 }
-			 else if (rand ==1){
-				  myStory = getSafariStory2();
-			 }
-			 else if(rand ==2){
-				  myStory = getSafariStory3();
-			 }
-		}
-		//space
-		else if(category ==3){
-			 if(rand==0){
-				  myStory = getSpaceStory1();
-			 }
-			 else if (rand ==1){
-				  myStory = getSpaceStory2();
-			 }
-			 else if(rand ==2){
-				 myStory = getSpaceStory3();
-			 }
-		}
-		//sports
-		else if(category ==4){
-			 if(rand==0){
-				 myStory = getSportsStory1();
-			 }
-			 else if (rand ==1){
-				  myStory = getSportsStory2();
-			 }
-			 else if(rand ==2){
-				  myStory = getSportsStory3();
-			 }
-		}
-		//zoo
-		else if(category ==5){
-			 if(rand==0){
-				 myStory = getZooStory1();
-			 }
-			 else if (rand ==1){
-				 myStory = getZooStory2();
-			 }
-			 else if(rand ==2){
-				 myStory = getZooStory3();
-			 }
-		}
+	
+	/**
+	 * Constructs a story based on the category that is chosen
+	 * @param cat
+	 */
+	public Story(int cat){
+		category = cat;
+		getRandomStory();
 	}
+	/**
+	 * If you ever need to manually add a prompt to a story
+	 * @param p
+	 */
 	public void addPrompt(Prompt p){
-		myStory.add(p);
+		myPromptList.add(p);
 	}
 	
+	/**
+	 * Sets the category with an integer. Also has an awesome cat :)
+	 * 1= beach
+	 * 2= Safari
+	 * 3=Space
+	 * 4= Sports
+	 * 5=Zoo
+	 * @param cat
+	 */
 	public void setCategory(int cat){
 		category = cat; //meow ^    ^ 
 						//      o  o
 						//    >  <>  <
 						//        Y
+	}
+	/**
+	 * 
+	 *Chooses a random story to play from the category
+	 *
+	 * 1= beach
+	 * 2= Safari
+	 * 3=Space
+	 * 4= Sports
+	 * 5=Zoo
+	 */
+	
+	public void getRandomStory(){
+		 int rand =  (int)(Math.random()*3);
+		//beach
+		if(category==0){
+			//randomly choose a story from the 4 beach
+			 if(rand==0){
+				 myPromptList = getStory1();
+			 }
+			 else if (rand ==1){
+				  myPromptList = getStory2();
+			 }
+			 else if(rand ==2){
+				  myPromptList = getStory3();
+			 }
+		}
+		//safari
+		else if(category ==2){
+			 if(rand==0){
+				  myPromptList = getSafariStory1();
+			 }
+			 else if (rand ==1){
+				  myPromptList = getSafariStory2();
+			 }
+			 else if(rand ==2){
+				  myPromptList = getSafariStory3();
+			 }
+		}
+		//space
+		else if(category ==3){
+			 if(rand==0){
+				  myPromptList = getSpaceStory1();
+			 }
+			 else if (rand ==1){
+				  myPromptList = getSpaceStory2();
+			 }
+			 else if(rand ==2){
+				 myPromptList = getSpaceStory3();
+			 }
+		}
+		//sports
+		else if(category ==4){
+			 if(rand==0){
+				 myPromptList = getSportsStory1();
+			 }
+			 else if (rand ==1){
+				  myPromptList = getSportsStory2();
+			 }
+			 else if(rand ==2){
+				  myPromptList = getSportsStory3();
+			 }
+		}
+		//zoo
+		else if(category ==5){
+			 if(rand==0){
+				 myPromptList = getZooStory1();
+			 }
+			 else if (rand ==1){
+				 myPromptList = getZooStory2();
+			 }
+			 else if(rand ==2){
+				 myPromptList = getZooStory3();
+			 }
+		}
 	}
 	
 	//for the first draft, just hard code the stories into methods here. 
