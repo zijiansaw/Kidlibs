@@ -10,12 +10,81 @@ public class Story {
 	 * Each story should just be a list of prompts
 	 */
 	Vector <Prompt> myStory = new Vector<Prompt>();
+	public int category;
 	public Story(){
-		Prompt prompt1 = new Prompt("Say your favoirte flavor of ice cream", 0);
-		myStory.add(prompt1);
+		//beach
+		if(category==0){
+			//randomly choose a story from the 4 beach
+			 int rand =  (int)(Math.random()*3);
+			 if(rand==0){
+				 Vector<Prompt> myStory = getStory1();
+			 }
+			 else if (rand ==1){
+				 Vector<Prompt> myStory = getStory2();
+			 }
+			 else if(rand ==2){
+				 Vector<Prompt> myStory = getStory3();
+			 }
+		}
+		//safari
+		else if(category ==2){
+			 int rand =  (int)(Math.random()*3);
+			 if(rand==0){
+				 Vector<Prompt> myStory = getSafariStory1();
+			 }
+			 else if (rand ==1){
+				 Vector<Prompt> myStory = getSafariStory2();
+			 }
+			 else if(rand ==2){
+				 Vector<Prompt> myStory = getSafariStory3();
+			 }
+		}
+		//space
+		else if(category ==3){
+			 int rand =  (int)(Math.random()*3);
+			 if(rand==0){
+				 Vector<Prompt> myStory = getSpaceStory1();
+			 }
+			 else if (rand ==1){
+				 Vector<Prompt> myStory = getSpaceStory2();
+			 }
+			 else if(rand ==2){
+				 Vector<Prompt> myStory = getSpaceStory3();
+			 }
+		}
+		//sports
+		else if(category ==4){
+			 int rand =  (int)(Math.random()*3);
+			 if(rand==0){
+				 Vector<Prompt> myStory = getSportsStory1();
+			 }
+			 else if (rand ==1){
+				 Vector<Prompt> myStory = getSportsStory2();
+			 }
+			 else if(rand ==2){
+				 Vector<Prompt> myStory = getSportsStory3();
+			 }
+		}
+		//zoo
+		else if(category ==5){
+			 int rand =  (int)(Math.random()*3);
+			 if(rand==0){
+				 Vector<Prompt> myStory = getZooStory1();
+			 }
+			 else if (rand ==1){
+				 Vector<Prompt> myStory = getZooStory2();
+			 }
+			 else if(rand ==2){
+				 Vector<Prompt> myStory = getZooStory3();
+			 }
+		}
 	}
 	public void addPrompt(Prompt p){
 		myStory.add(p);
+	}
+	
+	public void setCategory(int cat){
+		category = cat; //meow
 	}
 	
 	//for the first draft, just hard code the stories into methods here. 
