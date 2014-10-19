@@ -3,7 +3,6 @@ package edu.drake.project2;
 
 
 import java.util.Vector;
-import java.util.logging.Logger;
 
 import android.content.Intent;
 import android.media.MediaRecorder;
@@ -14,7 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.ImageButton;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class SayNoun extends ActionBarActivity {
@@ -24,6 +23,7 @@ public class SayNoun extends ActionBarActivity {
 	int i=0, numPrompts=0;
 	Story story;
 	TextView txtLabel;
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -88,6 +88,7 @@ public class SayNoun extends ActionBarActivity {
 //			}
 //		});
 
+
 	}
 
 	public void next(View view){
@@ -103,6 +104,7 @@ public class SayNoun extends ActionBarActivity {
 			
 			//go to the play my story screen
 			Intent intent = new Intent(getApplicationContext(), Play.class);
+
 			//intent.putExtra("storyPath", storyOutputFile);
 			startActivity(intent);
 		}

@@ -22,7 +22,7 @@ public class Category extends ActionBarActivity {
 		Button spaceBtn = (Button) findViewById(R.id.button4);
 		Button sportsBtn = (Button) findViewById(R.id.button1);
 		Button zooBtn = (Button) findViewById(R.id.button2);
-		
+
 		beachBtn.setOnClickListener( new OnClickListener() {
 
 			@Override

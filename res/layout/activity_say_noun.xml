@@ -28,7 +28,18 @@
         android:text="Default."
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
+<<<<<<< HEAD
 
+=======
+    <ImageButton
+        android:id="@+id/micBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ico_mic"
+        android:onClick = "record" />
+>>>>>>> b9b5ae50a469cf690f7a43a45325a37a6f7fbb6f
 
 
 </RelativeLayout>
