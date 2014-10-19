@@ -70,7 +70,7 @@ public class Story {
 			 }
 		}
 		//safari
-		else if(category ==2){
+		else if(category ==1){
 			 if(rand==0){
 				  myPromptList = getSafariStory1();
 			 }
@@ -82,7 +82,7 @@ public class Story {
 			 }
 		}
 		//space
-		else if(category ==3){
+		else if(category ==2){
 			 if(rand==0){
 				  myPromptList = getSpaceStory1();
 			 }
@@ -94,7 +94,7 @@ public class Story {
 			 }
 		}
 		//sports
-		else if(category ==4){
+		else if(category ==3){
 			 if(rand==0){
 				 myPromptList = getSportsStory1();
 			 }
@@ -106,7 +106,7 @@ public class Story {
 			 }
 		}
 		//zoo
-		else if(category ==5){
+		else if(category ==4){
 			 if(rand==0){
 				 myPromptList = getZooStory1();
 			 }
