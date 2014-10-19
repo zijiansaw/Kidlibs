@@ -8,14 +8,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="edu.drake.project2.SayNoun" >
 
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:src="@drawable/ico_mic" />
-
     <Button
         android:id="@+id/button1"
         android:layout_width="100dp"
@@ -23,7 +15,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="62dp"
-        android:onClick="sendMessage"
+        android:onClick="next"
         android:text="Next" />
 
     <TextView
@@ -33,7 +25,17 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="72dp"
-        android:text="Say a noun."
+        android:text="Default."
         android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ImageButton
+        android:id="@+id/micBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ico_mic"
+        android:onClick = "record" />
+
 
 </RelativeLayout>

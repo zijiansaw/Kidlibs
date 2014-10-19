@@ -1,12 +1,13 @@
 package edu.drake.project2;
 
-import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import edu.drake.project2.R;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 
 public class Category extends ActionBarActivity {
 
@@ -20,6 +21,64 @@ public class Category extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_category);
+		
+		//create buttons and onClickListeners for each categories
+		Button beachBtn = (Button) findViewById(R.id.button1);
+		Button safariBtn = (Button) findViewById(R.id.button2);
+		Button spaceBtn = (Button) findViewById(R.id.button3);
+		Button sportsBtn = (Button) findViewById(R.id.button4);
+		Button zooBtn = (Button) findViewById(R.id.button5);
+		
+		beachBtn.setOnClickListener( new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				Intent intent = new Intent(getApplicationContext(), SayNoun.class);
+				intent.putExtra("category", 0);
+				startActivity(intent);
+			}
+			
+		});
+		safariBtn.setOnClickListener( new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				Intent intent = new Intent(getApplicationContext(), SayNoun.class);
+				intent.putExtra("category", 1);
+				startActivity(intent);
+			}
+			
+		});
+		spaceBtn.setOnClickListener( new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				Intent intent = new Intent(getApplicationContext(), SayNoun.class);
+				intent.putExtra("category", 2);
+				startActivity(intent);
+			}
+			
+		});
+		sportsBtn.setOnClickListener( new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				Intent intent = new Intent(getApplicationContext(), SayNoun.class);
+				intent.putExtra("category", 3);
+				startActivity(intent);
+			}
+			
+		});
+		zooBtn.setOnClickListener( new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				Intent intent = new Intent(getApplicationContext(), SayNoun.class);
+				intent.putExtra("category", 4);
+				startActivity(intent);
+			}
+			
+		});
 	}
 
 	@Override
