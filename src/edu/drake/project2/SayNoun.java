@@ -26,10 +26,9 @@ import android.widget.Toast;
 public class SayNoun extends ActionBarActivity {
 	
 	private static final String LOG_TAG = "Audio Record";
-	private String outputFile0, outputFile1, outputFile2, outputFile3, outputFile4, storyOutputFile = null;
+	private String outputFile0, outputFile1, outputFile2, outputFile3, outputFile4, storyOutputFile, outputFileName = null;
 	private MediaRecorder myAudioRecorder;
 	private boolean recording = false;
-	private String outputFileName;
 	Vector <String> outputFileNames = new Vector <String>();
 	int i=0, numPrompts=0;
 	Story story;
@@ -41,7 +40,7 @@ public class SayNoun extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_say_noun);
-
+		
 		int category = getIntent().getIntExtra("category", -1);
 
 		//check to see if category was passed correctly
@@ -57,7 +56,7 @@ public class SayNoun extends ActionBarActivity {
 		txtLabel = (TextView)findViewById(R.id.textView1);
 		txtLabel.setText(story.myPromptList.get(i).getPromptString());
 
-		//setUpAudio();
+		setUpAudio();
 		
 		//set up timer and mic button
 		ImageButton micBtn = (ImageButton) findViewById(R.id.imageButton1);
@@ -101,7 +100,7 @@ public class SayNoun extends ActionBarActivity {
 		myAudioRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
 		Log.i("Audio", "set the outputFormat");
 		myAudioRecorder.setAudioEncoder(MediaRecorder.OutputFormat.AMR_NB);
-		myAudioRecorder.setOutputFile(Environment.getExternalStorageDirectory().getAbsolutePath() + "/kidLibs1");
+		myAudioRecorder.setOutputFile(outputFileName);
 		try{
 			myAudioRecorder.prepare();
 		}
@@ -118,7 +117,7 @@ public class SayNoun extends ActionBarActivity {
 	    myAudioRecorder.release();
 	    myAudioRecorder  = null;
 		//display message to confirm recording has stopped
-		message("Stopped Rcording");
+		message("Stopped Recording");
 	}
 		
 	//method for showing message to user
@@ -138,7 +137,9 @@ public class SayNoun extends ActionBarActivity {
 		outputFile2 = Environment.getExternalStorageDirectory().getAbsolutePath() + "/res2.3gp";;
 		outputFile3 = Environment.getExternalStorageDirectory().getAbsolutePath() + "/res3.3gp";;
 		outputFile4 = Environment.getExternalStorageDirectory().getAbsolutePath() + "/res4.3gp";;
-
+		
+		outputFileName = outputFile0;
+		
 		Log.i("Audio", "Created the output files");
 		outputFileNames.add(outputFile0);
 		outputFileNames.add(outputFile1);
@@ -146,7 +147,6 @@ public class SayNoun extends ActionBarActivity {
 		outputFileNames.add(outputFile3);
 		outputFileNames.add(outputFile4);
 		Log.i("Audio", "Added the outputFiles to the vector");
-		//set up the audioRecorder
 		
 	}
 
@@ -154,6 +154,7 @@ public class SayNoun extends ActionBarActivity {
 		if(i<4){
 			i++;
 			txtLabel.setText(story.myPromptList.get(i).getPromptString());
+			outputFileName = outputFileNames.elementAt(i);
 		}
 		else{
 			Log.i("next", "in the else statment");
