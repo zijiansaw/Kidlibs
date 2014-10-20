@@ -7,6 +7,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.Vector;
 
+import android.content.Context;
 import android.content.Intent;
 import android.media.MediaRecorder;
 import android.os.Bundle;
@@ -24,8 +25,11 @@ import android.widget.Toast;
 
 public class SayNoun extends ActionBarActivity {
 	
+	private static final String LOG_TAG = "Audio Record";
 	private String outputFile0, outputFile1, outputFile2, outputFile3, outputFile4, storyOutputFile = null;
 	private MediaRecorder myAudioRecorder;
+	private boolean recording = false;
+	private String outputFileName;
 	Vector <String> outputFileNames = new Vector <String>();
 	int i=0, numPrompts=0;
 	Story story;
@@ -56,28 +60,29 @@ public class SayNoun extends ActionBarActivity {
 		//setUpAudio();
 		
 		//set up timer and mic button
-//		ImageButton micBtn = (ImageButton) findViewById(R.id.imageButton1);
-//
-//		micBtn.setOnClickListener( new OnClickListener() {
-//
-//			@Override
-//			public void onClick(View arg0) {
-//				//start recording
-//				try {
-//					myAudioRecorder.prepare();
-//					myAudioRecorder.start();
-//				} catch (IllegalStateException e) {
-//					// TODO Auto-generated catch block
-//					e.printStackTrace();
-//				} catch (IOException e) {
-//					// TODO Auto-generated catch block
-//					e.printStackTrace();
-//				}
-//			    //start timer.
-//				new Timer().schedule(stop(), 3000);
-//			}
-//
-//		});
+		ImageButton micBtn = (ImageButton) findViewById(R.id.imageButton1);
+
+		micBtn.setOnClickListener( new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				
+				//currently you need to click the button once to start recording
+				//then again to stop recording. We should implement the timer later
+				if (!recording){
+					startRecording();
+				}
+				if (recording){
+					stopRecording();
+				}
+				recording = !recording;
+
+			    //start timer. 
+				//new Timer().schedule(stop(), 3000);
+				//message("button worked"); 
+			}
+
+		});
 	}
 
 	private TimerTask stop() {
@@ -87,7 +92,44 @@ public class SayNoun extends ActionBarActivity {
 		return null;
 	}
 
-
+	public void startRecording(){
+		//start recording
+		myAudioRecorder = new MediaRecorder();
+		Log.i("Audio", "created myAudioRecorder");
+		myAudioRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+		Log.i("Audio", "set the source to Mic");
+		myAudioRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
+		Log.i("Audio", "set the outputFormat");
+		myAudioRecorder.setAudioEncoder(MediaRecorder.OutputFormat.AMR_NB);
+		myAudioRecorder.setOutputFile(Environment.getExternalStorageDirectory().getAbsolutePath() + "/kidLibs1");
+		try{
+			myAudioRecorder.prepare();
+		}
+		catch (IOException e) {
+			Log.e(LOG_TAG, "prepare() failed");
+		}
+		myAudioRecorder.start(); 
+		message("Started Recording"); 
+	}
+	
+	//stops the recording
+	public void stopRecording(){
+		myAudioRecorder.stop();
+	    myAudioRecorder.release();
+	    myAudioRecorder  = null;
+		//display message to confirm recording has stopped
+		message("Stopped Rcording");
+	}
+		
+	//method for showing message to user
+	public void message(String message){
+		Context context = getApplicationContext();
+		CharSequence text = message;
+		int duration = Toast.LENGTH_SHORT;
+		Toast toast = Toast.makeText(context, text, duration);
+		toast.show();
+	}
+	
 	public void setUpAudio(){
 		//create the 5 hard-coded output file names. 
 		Log.i("Audio", "inside the audio start method");
@@ -106,15 +148,6 @@ public class SayNoun extends ActionBarActivity {
 		Log.i("Audio", "Added the outputFiles to the vector");
 		//set up the audioRecorder
 		
-		myAudioRecorder = new MediaRecorder();
-		Log.i("Audio", "created myAudioRecorder");
-		myAudioRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-		Log.i("Audio", "set the source to Mic");
-		myAudioRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
-		Log.i("Audio", "set the outputFormat");
-		myAudioRecorder.setAudioEncoder(MediaRecorder.OutputFormat.AMR_NB);
-		
-
 	}
 
 	public void next(View view){
