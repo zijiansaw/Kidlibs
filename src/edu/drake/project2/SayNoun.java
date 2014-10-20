@@ -118,7 +118,7 @@ public class SayNoun extends ActionBarActivity {
 	}
 
 	public void next(View view){
-		if(i<5){
+		if(i<4){
 			i++;
 			txtLabel.setText(story.myPromptList.get(i).getPromptString());
 		}
@@ -157,9 +157,6 @@ public class SayNoun extends ActionBarActivity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
-
-
-
 
 }
 

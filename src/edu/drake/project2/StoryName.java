@@ -183,9 +183,6 @@ public class StoryName extends ActionBarActivity {
 	     out.write(header, 0, 44);
 	 }
 	 
-	
-	
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
