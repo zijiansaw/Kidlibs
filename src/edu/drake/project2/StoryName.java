@@ -14,10 +14,11 @@ import android.widget.Toast;
 import edu.drake.project2.R;
 
 import java.io.*;
+import java.net.URL;
 
 public class StoryName extends ActionBarActivity {
 	
-	public void sendMessage(View view) throws FileNotFoundException{
+	public void sendMessage(View view) throws IOException{
 		
 		Intent intent = getIntent();
 		String name = intent.getStringExtra("transfer");
@@ -29,36 +30,37 @@ public class StoryName extends ActionBarActivity {
 		String filename = storyName + " by " + name;
 		
 		InputStream x= getResources().openRawResource(R.raw.try1);
-		InputStream y= getResources().openRawResource(R.raw.try2);		
-		
-		//saveFile(filename,x,y); //get concatenated file and filename and save it in device
-		//CombineWaveFile(filename,x,y);
+		InputStream y= getResources().openRawResource(R.raw.try2);
+
+		saveFile(filename,x,y); //get concatenated file and filename and save it in device
+		//CombineWaveFile(filename,,);
 		
 		Intent intent1 = new Intent(this,MyLibrary.class);		
 		startActivity(intent1);
 	}	
 	
+	//I can't figure out why it doesn't write from the second audio file 
 	public void saveFile(String filename,InputStream...files) throws FileNotFoundException
 	{
 		
-		SequenceInputStream z = new SequenceInputStream(files[0],files[1]);
+		SequenceInputStream z = new SequenceInputStream(files[1],files[0]);
 		String outputFile = Environment.getExternalStorageDirectory()+"/"+filename+".3gp";
 		File outFile = new File(outputFile);
 		
 		FileOutputStream fos = new FileOutputStream(outFile);
 
-
-        byte[] data = new byte[8192];
+        byte[] data = new byte[1024];
         try {
         	    
         	for (int readNum; (readNum = z.read(data)) != -1;)
         	{
         		fos.write(data, 0, readNum);
         	}
-                 
-            fos.close();
+        	
+        	files[1].close();                 
             files[0].close();
-            files[1].close();
+            z.close();
+            fos.close();
             
             Toast.makeText(this, "Done!!", Toast.LENGTH_LONG).show();
         } catch (IOException e) {
@@ -67,9 +69,10 @@ public class StoryName extends ActionBarActivity {
         }
         
 	}
-	
-	public void CombineWaveFile(String filename,FileInputStream file1, FileInputStream file2) 
-	{
+
+	//These two methods below may work but I can't confirm it yet
+	public void CombineWaveFile(String filename, String file1, String file2) 
+	 {
 	  
 	     FileInputStream in1 = null, in2 = null;
 	     final int RECORDER_BPP=16; //8,16,32..etc
@@ -86,13 +89,14 @@ public class StoryName extends ActionBarActivity {
 
 
 	     try {
-	         in1 = file1;
-	         in2 = file2;
+	         in1 = new FileInputStream(file1);
+	         in2 = new FileInputStream(file2);
+	         
 	       
 	         out = new FileOutputStream(new File(Environment.getExternalStorageDirectory()+"/"+filename+".3gp"));
 
 	         totalAudioLen = in1.getChannel().size() + in2.getChannel().size();
-
+	         
 	         totalDataLen = totalAudioLen + 36;
 
 	         WriteWaveFileHeader(out, totalAudioLen, totalDataLen,
@@ -113,21 +117,29 @@ public class StoryName extends ActionBarActivity {
 	         out.close();
 	         in1.close();
 	         in2.close();
-	                
+	       
+	        
+	         
+	         
+	        
+	         
 	         bufferSize=1024;
 	   data = new byte[bufferSize];
-
+	   
+	     
 	         out.close();
 	         out.flush();
+	         
+	      
 
-	         Toast.makeText(this, "Done!!", Toast.LENGTH_LONG).show();
+	     //    Toast.makeText(this, "Done!!", Toast.LENGTH_LONG).show();
 	     } catch (FileNotFoundException e) {
 	         e.printStackTrace();
 	     } catch (IOException e) {
 	         e.printStackTrace();
 	     }
 	 }
-
+	
 	private void WriteWaveFileHeader(FileOutputStream out, long totalAudioLen,
 	 long totalDataLen, long longSampleRate, int channels, long byteRate, int RECORDER_BPP)
 	 throws IOException 
@@ -182,7 +194,8 @@ public class StoryName extends ActionBarActivity {
 	
 	     out.write(header, 0, 44);
 	 }
-	 
+	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
