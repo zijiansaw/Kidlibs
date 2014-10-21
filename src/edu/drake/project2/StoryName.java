@@ -31,16 +31,49 @@ public class StoryName extends ActionBarActivity {
 		
 		InputStream x= getResources().openRawResource(R.raw.try1);
 		InputStream y= getResources().openRawResource(R.raw.try2);
-
-		saveFile(filename,x,y); //get concatenated file and filename and save it in device
-		//CombineWaveFile(filename,,);
+		
+		saveFile("first",x);
+		saveFile("second",y);
+		
+		//String x1=Environment.getExternalStorageDirectory()+"/first.3gp";
+		//String y1=Environment.getExternalStorageDirectory()+"/second.3gp";
+		
+		//saveMergeFile(filename,x,y); //get concatenated file and filename and save it in device
+		//CombineWaveFile(filename,x1,y1);
+		
 		
 		Intent intent1 = new Intent(this,MyLibrary.class);		
 		startActivity(intent1);
 	}	
 	
+	public void saveFile(String filename,InputStream z) throws FileNotFoundException
+	{
+		String outputFile = Environment.getExternalStorageDirectory()+"/"+filename+".3gp";
+		File outFile = new File(outputFile);
+		
+		FileOutputStream fos = new FileOutputStream(outFile);
+
+        byte[] data = new byte[1024];
+        try {
+        	    
+        	for (int readNum; (readNum = z.read(data)) != -1;)
+        	{
+        		fos.write(data, 0, readNum);
+        	}
+            z.close();
+            fos.close();
+            
+            Toast.makeText(this, "Save inputstream as "+ filename+"!!", Toast.LENGTH_LONG).show();
+            
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        
+	}
+	
 	//I can't figure out why it doesn't write from the second audio file 
-	public void saveFile(String filename,InputStream...files) throws FileNotFoundException
+	public void saveMergeFile(String filename,InputStream...files) throws FileNotFoundException
 	{
 		
 		SequenceInputStream z = new SequenceInputStream(files[1],files[0]);
@@ -57,12 +90,24 @@ public class StoryName extends ActionBarActivity {
         		fos.write(data, 0, readNum);
         	}
         	
+        	/*
+        	for (int readNum; (readNum = files[0].read(data)) != -1;)
+        	{
+        		fos.write(data, 0, readNum);
+        	}
+        	for (int readNum; (readNum = files[1].read(data)) != -1;)
+        	{
+        		fos.write(data, 0, readNum);
+        	}
+        	*/
+        	
         	files[1].close();                 
             files[0].close();
             z.close();
             fos.close();
             
             Toast.makeText(this, "Done!!", Toast.LENGTH_LONG).show();
+            
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -85,7 +130,7 @@ public class StoryName extends ActionBarActivity {
 	     long byteRate = RECORDER_BPP * RECORDER_SAMPLERATE * channels / 8;
 
 	     int bufferSize=1024;
-	  byte[] data = new byte[bufferSize];
+	     byte[] data = new byte[bufferSize];
 
 
 	     try {
@@ -117,22 +162,13 @@ public class StoryName extends ActionBarActivity {
 	         out.close();
 	         in1.close();
 	         in2.close();
-	       
-	        
-	         
-	         
-	        
 	         
 	         bufferSize=1024;
-	   data = new byte[bufferSize];
-	   
-	     
+	         data = new byte[bufferSize];
 	         out.close();
 	         out.flush();
-	         
-	      
 
-	     //    Toast.makeText(this, "Done!!", Toast.LENGTH_LONG).show();
+	     Toast.makeText(this, "Done!!", Toast.LENGTH_LONG).show();
 	     } catch (FileNotFoundException e) {
 	         e.printStackTrace();
 	     } catch (IOException e) {
