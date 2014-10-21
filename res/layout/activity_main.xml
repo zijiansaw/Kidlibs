@@ -8,35 +8,34 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="edu.drake.project2.MainActivity" >
 
-    <Button
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/library"
+        android:scaleType="fitXY"
+        android:src="@drawable/homeBackground" />
+
+    <ImageButton
         android:id="@+id/library"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageView1"
         android:layout_alignLeft="@+id/makestory"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="52dp"
-        android:text="My Library" 
-        android:onClick="sendMessage2" />
+        android:onClick="sendMessage2"
+        android:src="@drawable/myStoriesButton" />
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_above="@+id/makestory"
-        android:layout_alignLeft="@+id/makestory"
-        android:layout_marginBottom="88dp"
-        android:gravity="center"
-        android:text="@string/Kidlibs"
-        android:textAppearance="?android:attr/textAppearanceLarge"/>
-
-    <Button
+    <ImageButton
         android:id="@+id/makestory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/library"
+        android:layout_alignBottom="@+id/imageView1"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="16dp"
-        android:text="Make a Story!"
-		android:onClick="sendMessage1"/>
+        android:layout_marginBottom="64dp"
+        android:onClick="sendMessage1"
+        android:src="@drawable/tellAStoryButton" />
 
 </RelativeLayout>

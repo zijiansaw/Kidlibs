@@ -34,8 +34,15 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:src="@drawable/ico_mic" 
-        />
-  
+        android:src="@drawable/ico_mic" />
+
+    <Gallery
+        android:id="@+id/gallery1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="34dp"
+        android:layout_marginTop="34dp" />
 
 </RelativeLayout>
