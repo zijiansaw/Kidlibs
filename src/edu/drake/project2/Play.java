@@ -19,7 +19,7 @@ public class Play extends ActionBarActivity {
 	
 	Button playBtn;
     Button pauseBtn;
-    int audioindex = 1;
+    int audioindex;
     String[] files = {Environment.getExternalStorageDirectory().getAbsolutePath() + "/res0.3gp",
     		Environment.getExternalStorageDirectory().getAbsolutePath() + "/res1.3gp",
     		Environment.getExternalStorageDirectory().getAbsolutePath() + "/res2.3gp",
@@ -34,23 +34,33 @@ public class Play extends ActionBarActivity {
 	
 	public void playAll(View view) throws IllegalArgumentException, SecurityException, IllegalStateException, IOException
 	{
+		audioindex=1;
 		mediaPlayer =  new MediaPlayer();
-		playFile(files[0]);
+		mediaPlayer.setDataSource(files[0]);
+		mediaPlayer.prepare();
 		
-		
-		//setNextMediaForMediaPlayer(mediaPlayer);
-	}
-	
-	public void setNextMediaForMediaPlayer(MediaPlayer mediaPlayer)
-	{
 		mediaPlayer.setOnCompletionListener(new OnCompletionListener()
 		{
-		    // @Override
-		    public void onCompletion(MediaPlayer arg0) 
+		    @Override
+		    public void onCompletion(MediaPlayer medi) 
 		    {
 		    	try {
-					playFile(files[audioindex]);
-				} catch (IllegalArgumentException e) {
+		    		
+		    		mediaPlayer.reset();
+		    		if(audioindex==5)
+		    		{
+		    			mediaPlayer.release();
+		                mediaPlayer = null;
+		    		}
+		    		else
+		    		{
+		    			mediaPlayer.setDataSource(files[audioindex]);
+			    		mediaPlayer.prepare();
+			    		mediaPlayer.start();
+				    	audioindex+=1;
+		    		}
+		    		
+		    	} catch (IllegalArgumentException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} catch (SecurityException e) {
@@ -62,21 +72,14 @@ public class Play extends ActionBarActivity {
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
-				}
-		    	audioindex+=1; 
+				} 
 		     }
 		});
-	}
-	
-	public void playFile(String x) throws IllegalArgumentException, SecurityException, IllegalStateException, IOException
-	{
 		
-		mediaPlayer.setDataSource(x);
-		mediaPlayer.prepare();
 		mediaPlayer.start();
 		Toast.makeText(this, "Playing audio.", Toast.LENGTH_LONG).show();
-		
-	}
+
+	}	
 		
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
