@@ -13,7 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
-import edu.drake.project2.R;
+
 
 public class Play extends ActionBarActivity {
 	

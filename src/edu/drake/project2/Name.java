@@ -7,7 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
-import edu.drake.project2.R;
+
 
 public class Name extends ActionBarActivity {
 	

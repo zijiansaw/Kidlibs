@@ -3,9 +3,9 @@ package edu.drake.project2;
 
 
 import java.io.IOException;
-import java.util.Timer;
 import java.util.TimerTask;
 import java.util.Vector;
+
 
 import android.content.Context;
 import android.content.Intent;

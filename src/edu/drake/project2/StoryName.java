@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-import edu.drake.project2.R;
+
 
 import java.io.*;
 import java.net.URL;
