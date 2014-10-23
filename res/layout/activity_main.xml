@@ -17,7 +17,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignRight="@+id/library"
         android:scaleType="fitXY"
-        android:src="@drawable/homeBackground" />
+        android:src="@drawable/homebackground" />
 
     <ImageButton
         android:id="@+id/library"
@@ -26,7 +26,7 @@
         android:layout_alignBottom="@+id/imageView1"
         android:layout_alignLeft="@+id/makestory"
         android:onClick="sendMessage2"
-        android:src="@drawable/myStoriesButton" />
+        android:src="@drawable/mystoriesbutton" />
 
     <ImageButton
         android:id="@+id/makestory"
@@ -36,6 +36,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="64dp"
         android:onClick="sendMessage1"
-        android:src="@drawable/tellAStoryButton" />
+        android:src="@drawable/tellastorybutton" />
 
 </RelativeLayout>

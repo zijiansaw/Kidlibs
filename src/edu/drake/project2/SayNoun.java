@@ -20,6 +20,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Chronometer;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,7 +35,9 @@ public class SayNoun extends ActionBarActivity {
 	Story story;
 	TextView txtLabel;
 	Chronometer chronometer;
-
+    
+	
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +66,7 @@ public class SayNoun extends ActionBarActivity {
 
 		micBtn.setOnClickListener( new OnClickListener() {
 
+		
 			@Override
 			public void onClick(View arg0) {
 				
@@ -151,10 +155,17 @@ public class SayNoun extends ActionBarActivity {
 	}
 
 	public void next(View view){
+		ImageView image = (ImageView) findViewById(R.id.progress);
+		int progress[] = {getResources().getIdentifier("drawable/dog3", null, getPackageName()),
+				getResources().getIdentifier("drawable/dog4", null, getPackageName()),
+				getResources().getIdentifier("drawable/dog5", null, getPackageName()),
+				getResources().getIdentifier("drawable/dog6", null, getPackageName())};
+		
 		if(i<4){
 			i++;
 			txtLabel.setText(story.myPromptList.get(i).getPromptString());
 			outputFileName = outputFileNames.elementAt(i);
+			image.setImageResource(progress[i-1]);
 		}
 		else{
 			Log.i("next", "in the else statment");
@@ -163,8 +174,6 @@ public class SayNoun extends ActionBarActivity {
 
 			//concatenate the strings here
 			
-			
-
 			//go to the play my story screen
 			Intent intent = new Intent(getApplicationContext(), Play.class);
 
@@ -181,7 +190,8 @@ public class SayNoun extends ActionBarActivity {
 	}
 
 	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
+	public boolean onOptionsItemSelected(MenuItem item) 
+	{
 		// Handle action bar item clicks here. The action bar will
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.

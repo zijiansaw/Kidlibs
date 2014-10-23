@@ -28,12 +28,7 @@ public class StoryName extends ActionBarActivity {
 		//EditText text1 = (EditText)findViewById(R.id.name);
 		//String name = text1.getText().toString();
 		String filename = storyName + " by " + name;
-		
-		InputStream x= getResources().openRawResource(R.raw.try1);
-		InputStream y= getResources().openRawResource(R.raw.try2);
-		
-		saveFile("first",x);
-		saveFile("second",y);
+
 		
 		//String x1=Environment.getExternalStorageDirectory()+"/first.3gp";
 		//String y1=Environment.getExternalStorageDirectory()+"/second.3gp";
