@@ -1,6 +1,8 @@
 package edu.drake.project2;
 
 import java.io.IOException;
+import java.io.Serializable;
+import java.util.Vector;
 
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
@@ -20,15 +22,13 @@ public class Play extends ActionBarActivity {
 	Button playBtn;
     Button pauseBtn;
     int audioindex;
-    String[] files = {Environment.getExternalStorageDirectory().getAbsolutePath() + "/res0.3gp",
-    		Environment.getExternalStorageDirectory().getAbsolutePath() + "/res1.3gp",
-    		Environment.getExternalStorageDirectory().getAbsolutePath() + "/res2.3gp",
-    		Environment.getExternalStorageDirectory().getAbsolutePath() + "/res3.3gp",
-    		Environment.getExternalStorageDirectory().getAbsolutePath() + "/res4.3gp"};
+   	Vector <String> files;
     MediaPlayer mediaPlayer;
+    Story story;
+
 
 	public void sendMessage(View view){
-		Intent intent = new Intent(this,Name.class);
+		Intent intent = new Intent(this, Name.class);
 		startActivity(intent);
 	}	
 	
@@ -36,7 +36,7 @@ public class Play extends ActionBarActivity {
 	{
 		audioindex=1;
 		mediaPlayer =  new MediaPlayer();
-		mediaPlayer.setDataSource(files[0]);
+		mediaPlayer.setDataSource(files.get(0));
 		mediaPlayer.prepare();
 		
 		mediaPlayer.setOnCompletionListener(new OnCompletionListener()
@@ -54,7 +54,7 @@ public class Play extends ActionBarActivity {
 		    		}
 		    		else
 		    		{
-		    			mediaPlayer.setDataSource(files[audioindex]);
+		    			mediaPlayer.setDataSource(files.get(audioindex));
 			    		mediaPlayer.prepare();
 			    		mediaPlayer.start();
 				    	audioindex+=1;
@@ -85,10 +85,26 @@ public class Play extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_play);	
-		//playBtn = (Button) findViewById(R.id.play);
-        //pauseBtn = (Button) findViewById(R.id.pause);
-        //playBtn.setOnClickListener(this);
-        //pauseBtn.setOnClickListener(this);
+	    story = (Story) getIntent().getSerializableExtra("story");
+	    
+	    //setup the vector of filenames to play
+	    //TODO: Fix the one story that starts with a response, not a prompt.
+	    //TODO: Also record a snippet of silence to set as beach1_3, change beach1_3 and beach1_4
+	    
+	    files.add(story.promptFileNames.get(0));
+		files.add(Environment.getExternalStorageDirectory().getAbsolutePath() + "/res0.3gp");
+		files.add(story.promptFileNames.get(1));
+		files.add(Environment.getExternalStorageDirectory().getAbsolutePath() + "/res1.3gp");
+		files.add(story.promptFileNames.get(2));
+		files.add(Environment.getExternalStorageDirectory().getAbsolutePath() + "/res2.3gp");
+		files.add(story.promptFileNames.get(3));
+		files.add(Environment.getExternalStorageDirectory().getAbsolutePath() + "/res3.3gp");
+		files.add(story.promptFileNames.get(4));
+		files.add(Environment.getExternalStorageDirectory().getAbsolutePath() + "/res4.3gp");
+		if(story.promptFileNames.size()>5 || story.promptFileNames.size() == 5 ){
+			files.add(story.promptFileNames.get(5));
+		}
+	    
 	}
 
 	@Override
@@ -110,29 +126,4 @@ public class Play extends ActionBarActivity {
 		return super.onOptionsItemSelected(item);
 	}
 
-/*
-	@Override
-	public void onClick(View v) 
-	{
-		MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.try2);
-		switch (v.getId()) 
-		{
-        case R.id.play:
-        	
-    		mediaPlayer.start();
-    		Toast.makeText(this, "Playing audio.", Toast.LENGTH_LONG).show();
-            playBtn.setVisibility(Button.GONE);
-            pauseBtn.setVisibility(Button.VISIBLE);
-            break;
-        case R.id.pause:
-    		mediaPlayer.stop();
-    		Toast.makeText(this, "Playing audio.", Toast.LENGTH_LONG).show();
-            pauseBtn.setVisibility(Button.GONE);
-            playBtn.setVisibility(Button.VISIBLE);
-            break;
-        }
-	    
-		
-	}
-	*/
 }

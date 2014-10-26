@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.util.TimerTask;
 import java.util.Vector;
 
-
 import android.content.Context;
 import android.content.Intent;
 import android.media.MediaRecorder;
@@ -34,9 +33,7 @@ public class SayNoun extends ActionBarActivity {
 	int i=0, numPrompts=0;
 	Story story;
 	TextView txtLabel;
-	Chronometer chronometer;
-    
-	
+
 	
 
 	@Override
@@ -156,29 +153,27 @@ public class SayNoun extends ActionBarActivity {
 
 	public void next(View view){
 		ImageView image = (ImageView) findViewById(R.id.progress);
-		int progress[] = {getResources().getIdentifier("drawable/dog3", null, getPackageName()),
+		int progress[] = {
+				getResources().getIdentifier("drawable/dog3", null, getPackageName()),
 				getResources().getIdentifier("drawable/dog4", null, getPackageName()),
 				getResources().getIdentifier("drawable/dog5", null, getPackageName()),
-				getResources().getIdentifier("drawable/dog6", null, getPackageName())};
-		
+				getResources().getIdentifier("drawable/dog6", null, getPackageName())
+				};
 		if(i<4){
 			i++;
 			txtLabel.setText(story.myPromptList.get(i).getPromptString());
 			outputFileName = outputFileNames.elementAt(i);
 			image.setImageResource(progress[i-1]);
+			String promptFileName = story.commandFileNames.get(i);
+			//wait for x time, then play the command stored in the promptFileName
+			
 		}
 		else{
 			Log.i("next", "in the else statment");
-			//create the storyOutputFile
-			//storyOutputFile = Environment.getExternalStorageDirectory().getAbsolutePath() + "/story.3gp";;
-
-			//concatenate the strings here
-			
-			//go to the play my story screen
 			Intent intent = new Intent(getApplicationContext(), Play.class);
-
-			//intent.putExtra("storyPath", storyOutputFile);
+			intent.putExtra("story", story);
 			startActivity(intent);
+			
 		}
 	}
 

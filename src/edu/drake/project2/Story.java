@@ -1,16 +1,18 @@
 package edu.drake.project2;
 
+import java.io.Serializable;
 import java.util.Vector;
 
 //So essentially when you create a story, you create a list of prompts, and then iterate through the list to play the game. 
 //need to work on adding the audio, as well as output files for the 
-public class Story {
+public class Story implements Serializable {
 
 	/**
 	 * Each story should just be a list of prompts
 	 */
 	Vector <Prompt> myPromptList = new Vector<Prompt>();
-	Vector <String> audioFileName = new Vector<String>();
+	Vector <String> promptFileNames = new Vector<String>();
+	Vector <String> commandFileNames = new Vector<String>();
 	public int category;
 	
 	/**
@@ -126,18 +128,24 @@ public class Story {
 		Prompt prompt2 = new Prompt("Say something you wear when it's cold outside!", 1);
 		Prompt prompt3 = new Prompt("Say something you use at school!", 2);
 		Prompt prompt4 = new Prompt("Say your favorite flavor of ice cream!", 3);
-		Prompt prompt5 = new Prompt("Name an animal that likes the cold!", 4);
+		Prompt prompt5 = new Prompt("Say an animal that likes the cold!", 4);
 		Vector<Prompt> myBeachStory = new Vector<Prompt>();
+		commandFileNames.add("raw/beachc1_1");
+		commandFileNames.add("raw/beachc1_2");
+		commandFileNames.add("raw/beachc1_3");
+		commandFileNames.add("raw/beachc1_4");
+		commandFileNames.add("raw/beachc1_5");
+		
 		myBeachStory.add(prompt1);
 		myBeachStory.add(prompt2);
 		myBeachStory.add(prompt3);
 		myBeachStory.add(prompt4);
 		myBeachStory.add(prompt5);
-		audioFileName.add("raw/beach1_1.mp3");
-		audioFileName.add("raw/beach1_2.mp3");
-		audioFileName.add("raw/beach1_3.mp3");
-		audioFileName.add("raw/beach1_4.mp3");
-		audioFileName.add("raw/beach1_5.mp3");
+		promptFileNames.add("raw/beach1_1.mp3");
+		promptFileNames.add("raw/beach1_2.mp3");
+		promptFileNames.add("raw/beach1_3.mp3");
+		promptFileNames.add("raw/beach1_4.mp3");
+		promptFileNames.add("raw/beach1_5.mp3");
 		return myBeachStory;
 	}
 	public Vector<Prompt> getStory2(){
@@ -152,11 +160,16 @@ public class Story {
 		myBeachStory.add(prompt3);
 		myBeachStory.add(prompt4);
 		myBeachStory.add(prompt5);
-		audioFileName.add("raw/beach2_1.mp3");
-		audioFileName.add("raw/beach2_2.mp3");
-		audioFileName.add("raw/beach2_3.mp3");
-		audioFileName.add("raw/beach2_4.mp3");
-		audioFileName.add("raw/beach2_5.mp3");
+		commandFileNames.add("raw/beachc2_1");
+		commandFileNames.add("raw/beachc2_2");
+		commandFileNames.add("raw/beachc2_3");
+		commandFileNames.add("raw/beachc2_4");
+		commandFileNames.add("raw/beachc2_5");
+		promptFileNames.add("raw/beach2_1.mp3");
+		promptFileNames.add("raw/beach2_2.mp3");
+		promptFileNames.add("raw/beach2_3.mp3");
+		promptFileNames.add("raw/beach2_4.mp3");
+		promptFileNames.add("raw/beach2_5.mp3");
 		return myBeachStory;
 	}
 	public Vector<Prompt> getStory3(){
@@ -171,11 +184,16 @@ public class Story {
 		myBeachStory.add(prompt3);
 		myBeachStory.add(prompt4);
 		myBeachStory.add(prompt5);
-		audioFileName.add("raw/beach3_1.mp3");
-		audioFileName.add("raw/beach3_2.mp3");
-		audioFileName.add("raw/beach3_3.mp3");
-		audioFileName.add("raw/beach3_4.mp3");
-		audioFileName.add("raw/beach3_5.mp3");
+		commandFileNames.add("raw/beachc3_1");
+		commandFileNames.add("raw/beachc3_2");
+		commandFileNames.add("raw/beachc3_3");
+		commandFileNames.add("raw/beachc3_4");
+		commandFileNames.add("raw/beachc3_5");
+		promptFileNames.add("raw/beach3_1.mp3");
+		promptFileNames.add("raw/beach3_2.mp3");
+		promptFileNames.add("raw/beach3_3.mp3");
+		promptFileNames.add("raw/beach3_4.mp3");
+		promptFileNames.add("raw/beach3_5.mp3");
 		return myBeachStory;
 	}
 	public Vector<Prompt> getSafariStory1(){
@@ -190,11 +208,18 @@ public class Story {
 		mySafariStory.add(prompt3);
 		mySafariStory.add(prompt4);
 		mySafariStory.add(prompt5);
-		audioFileName.add("raw/safari1_1.mp3");
-		audioFileName.add("raw/safari1_2.mp3");
-		audioFileName.add("raw/safari1_3.mp3");
-		audioFileName.add("raw/sarafi1_4.mp3");
-		audioFileName.add("raw/safari1_5.mp3");
+		
+		commandFileNames.add("raw/safaric1_1.mp3");
+		commandFileNames.add("raw/safaric1_2.mp3");
+		commandFileNames.add("raw/safaric1_3.mp3");
+		commandFileNames.add("raw/sarafic1_4.mp3");
+		commandFileNames.add("raw/safaric1_5.mp3");
+		
+		promptFileNames.add("raw/safari1_1.mp3");
+		promptFileNames.add("raw/safari1_2.mp3");
+		promptFileNames.add("raw/safari1_3.mp3");
+		promptFileNames.add("raw/sarafi1_4.mp3");
+		promptFileNames.add("raw/safari1_5.mp3");
 		return mySafariStory;
 	}
 	public Vector<Prompt> getSafariStory2(){
@@ -209,11 +234,19 @@ public class Story {
 		mySafariStory.add(prompt3);
 		mySafariStory.add(prompt4);
 		mySafariStory.add(prompt5);
-		audioFileName.add("raw/safari2_1.mp3");
-		audioFileName.add("raw/safari2_2.mp3");
-		audioFileName.add("raw/safari2_3.mp3");
-		audioFileName.add("raw/sarafi2_4.mp3");
-		audioFileName.add("raw/safari2_5.mp3");
+		
+		commandFileNames.add("raw/safaric2_1.mp3");
+		commandFileNames.add("raw/safaric2_2.mp3");
+		commandFileNames.add("raw/safaric2_3.mp3");
+		commandFileNames.add("raw/sarafic2_4.mp3");
+		commandFileNames.add("raw/safaric2_5.mp3");
+		
+		promptFileNames.add("raw/safari2_1.mp3");
+		promptFileNames.add("raw/safari2_2.mp3");
+		promptFileNames.add("raw/safari2_3.mp3");
+		promptFileNames.add("raw/sarafi2_4.mp3");
+		promptFileNames.add("raw/safari2_5.mp3");
+		
 		return mySafariStory;
 	}
 	public Vector<Prompt> getSafariStory3(){
@@ -228,11 +261,18 @@ public class Story {
 		mySafariStory.add(prompt3);
 		mySafariStory.add(prompt4);
 		mySafariStory.add(prompt5);
-		audioFileName.add("raw/safari3_1.mp3");
-		audioFileName.add("raw/safari3_2.mp3");
-		audioFileName.add("raw/safari3_3.mp3");
-		audioFileName.add("raw/sarafi3_4.mp3");
-		audioFileName.add("raw/safari3_5.mp3");
+		
+		commandFileNames.add("raw/safaric3_1.mp3");
+		commandFileNames.add("raw/safaric3_2.mp3");
+		commandFileNames.add("raw/safaric3_3.mp3");
+		commandFileNames.add("raw/sarafic3_4.mp3");
+		commandFileNames.add("raw/safaric3_5.mp3");
+		
+		promptFileNames.add("raw/safari3_1.mp3");
+		promptFileNames.add("raw/safari3_2.mp3");
+		promptFileNames.add("raw/safari3_3.mp3");
+		promptFileNames.add("raw/sarafi3_4.mp3");
+		promptFileNames.add("raw/safari3_5.mp3");
 		return mySafariStory;
 	}	
 	public Vector<Prompt> getSpaceStory1(){
@@ -247,11 +287,18 @@ public class Story {
 		mySpaceStory.add(prompt3);
 		mySpaceStory.add(prompt4);
 		mySpaceStory.add(prompt5);
-		audioFileName.add("raw/space1_1.mp3");
-		audioFileName.add("raw/space1_2.mp3");
-		audioFileName.add("raw/space1_3.mp3");
-		audioFileName.add("raw/space1_4.mp3");
-		audioFileName.add("raw/space1_5.mp3");
+		
+		commandFileNames.add("raw/spacec1_1.mp3");
+		commandFileNames.add("raw/spacec1_2.mp3");
+		commandFileNames.add("raw/spacec1_3.mp3");
+		commandFileNames.add("raw/spacec1_4.mp3");
+		commandFileNames.add("raw/spacec1_5.mp3");
+		
+		promptFileNames.add("raw/space1_1.mp3");
+		promptFileNames.add("raw/space1_2.mp3");
+		promptFileNames.add("raw/space1_3.mp3");
+		promptFileNames.add("raw/space1_4.mp3");
+		promptFileNames.add("raw/space1_5.mp3");
 		return mySpaceStory;
 	}
 	public Vector<Prompt> getSpaceStory2(){
@@ -266,11 +313,18 @@ public class Story {
 		mySpaceStory.add(prompt3);
 		mySpaceStory.add(prompt4);
 		mySpaceStory.add(prompt5);
-		audioFileName.add("raw/space2_1.mp3");
-		audioFileName.add("raw/space2_2.mp3");
-		audioFileName.add("raw/space2_3.mp3");
-		audioFileName.add("raw/space2_4.mp3");
-		audioFileName.add("raw/space2_5.mp3");
+		
+		commandFileNames.add("raw/spacec2_1.mp3");
+		commandFileNames.add("raw/spacec2_2.mp3");
+		commandFileNames.add("raw/spacec2_3.mp3");
+		commandFileNames.add("raw/spacec2_4.mp3");
+		commandFileNames.add("raw/spacec2_5.mp3");
+		
+		promptFileNames.add("raw/space2_1.mp3");
+		promptFileNames.add("raw/space2_2.mp3");
+		promptFileNames.add("raw/space2_3.mp3");
+		promptFileNames.add("raw/space2_4.mp3");
+		promptFileNames.add("raw/space2_5.mp3");
 		return mySpaceStory;
 	}
 	public Vector<Prompt> getSpaceStory3(){
@@ -285,11 +339,18 @@ public class Story {
 		mySpaceStory.add(prompt3);
 		mySpaceStory.add(prompt4);
 		mySpaceStory.add(prompt5);
-		audioFileName.add("raw/space3_1.mp3");
-		audioFileName.add("raw/space3_2.mp3");
-		audioFileName.add("raw/space3_3.mp3");
-		audioFileName.add("raw/space3_4.mp3");
-		audioFileName.add("raw/space3_5.mp3");
+		
+		commandFileNames.add("raw/spacec2_1.mp3");
+		commandFileNames.add("raw/spacec2_2.mp3");
+		commandFileNames.add("raw/spacec2_3.mp3");
+		commandFileNames.add("raw/spacec2_4.mp3");
+		commandFileNames.add("raw/spacec2_5.mp3");
+		
+		promptFileNames.add("raw/space3_1.mp3");
+		promptFileNames.add("raw/space3_2.mp3");
+		promptFileNames.add("raw/space3_3.mp3");
+		promptFileNames.add("raw/space3_4.mp3");
+		promptFileNames.add("raw/space3_5.mp3");
 		return mySpaceStory;
 	}
 	public Vector<Prompt> getSportsStory1(){
@@ -304,11 +365,18 @@ public class Story {
 		mySportsStory.add(prompt3);
 		mySportsStory.add(prompt4);
 		mySportsStory.add(prompt5);
-		audioFileName.add("raw/sports1_1.mp3");
-		audioFileName.add("raw/sports1_2.mp3");
-		audioFileName.add("raw/sports1_3.mp3");
-		audioFileName.add("raw/sports1_4.mp3");
-		audioFileName.add("raw/sports1_5.mp3");
+		
+		commandFileNames.add("raw/spacec3_1.mp3");
+		commandFileNames.add("raw/spacec3_2.mp3");
+		commandFileNames.add("raw/spacec3_3.mp3");
+		commandFileNames.add("raw/spacec3_4.mp3");
+		commandFileNames.add("raw/spacec3_5.mp3");
+		
+		promptFileNames.add("raw/sports1_1.mp3");
+		promptFileNames.add("raw/sports1_2.mp3");
+		promptFileNames.add("raw/sports1_3.mp3");
+		promptFileNames.add("raw/sports1_4.mp3");
+		promptFileNames.add("raw/sports1_5.mp3");
 		return mySportsStory;
 	}
 	public Vector<Prompt> getSportsStory2(){
@@ -323,11 +391,18 @@ public class Story {
 		mySportsStory.add(prompt3);
 		mySportsStory.add(prompt4);
 		mySportsStory.add(prompt5);
-		audioFileName.add("raw/sports2_1.mp3");
-		audioFileName.add("raw/sports2_2.mp3");
-		audioFileName.add("raw/sports2_3.mp3");
-		audioFileName.add("raw/sports2_4.mp3");
-		audioFileName.add("raw/sports2_5.mp3");
+		
+		commandFileNames.add("raw/sportsc1_1.mp3");
+		commandFileNames.add("raw/sportsc1_2.mp3");
+		commandFileNames.add("raw/sportsc1_3.mp3");
+		commandFileNames.add("raw/sporstc1_4.mp3");
+		commandFileNames.add("raw/sportsc1_5.mp3");
+		
+		promptFileNames.add("raw/sports2_1.mp3");
+		promptFileNames.add("raw/sports2_2.mp3");
+		promptFileNames.add("raw/sports2_3.mp3");
+		promptFileNames.add("raw/sports2_4.mp3");
+		promptFileNames.add("raw/sports2_5.mp3");
 		return mySportsStory;
 	}
 	public Vector<Prompt> getSportsStory3(){
@@ -342,13 +417,21 @@ public class Story {
 		mySportsStory.add(prompt3);
 		mySportsStory.add(prompt4);
 		mySportsStory.add(prompt5);
-		audioFileName.add("raw/sports3_1.mp3");
-		audioFileName.add("raw/sports3_2.mp3");
-		audioFileName.add("raw/sports3_3.mp3");
-		audioFileName.add("raw/sports3_4.mp3");
-		audioFileName.add("raw/sports3_5.mp3");
+		
+		commandFileNames.add("raw/sportsc3_1.mp3");
+		commandFileNames.add("raw/sportsc3_2.mp3");
+		commandFileNames.add("raw/sportsc3_3.mp3");
+		commandFileNames.add("raw/sporstc3_4.mp3");
+		commandFileNames.add("raw/sportsc3_5.mp3");
+		
+		promptFileNames.add("raw/sports3_1.mp3");
+		promptFileNames.add("raw/sports3_2.mp3");
+		promptFileNames.add("raw/sports3_3.mp3");
+		promptFileNames.add("raw/sports3_4.mp3");
+		promptFileNames.add("raw/sports3_5.mp3");
 		return mySportsStory;
 	}
+	//not exactly sure this one does the right thing or is ever called.
 	public Vector<Prompt> getSportsStory4(){
 		Prompt prompt1 = new Prompt("Say a vegetable", 0);
 		Prompt prompt2 = new Prompt("Say your favorite ice cream sundae topping!", 1);
@@ -361,11 +444,18 @@ public class Story {
 		mySportsStory.add(prompt3);
 		mySportsStory.add(prompt4);
 		mySportsStory.add(prompt5);
-		audioFileName.add("raw/zoo1_1.mp3");
-		audioFileName.add("raw/zoo1_2.mp3");
-		audioFileName.add("raw/zoo1_3.mp3");
-		audioFileName.add("raw/zoo1_4.mp3");
-		audioFileName.add("raw/zoo1_5.mp3");
+		
+		commandFileNames.add("raw/sportsc1_1.mp3");
+		commandFileNames.add("raw/sportsc1_2.mp3");
+		commandFileNames.add("raw/sportsc1_3.mp3");
+		commandFileNames.add("raw/sporstc1_4.mp3");
+		commandFileNames.add("raw/sportsc1_5.mp3");
+		
+		promptFileNames.add("raw/zoo1_1.mp3");
+		promptFileNames.add("raw/zoo1_2.mp3");
+		promptFileNames.add("raw/zoo1_3.mp3");
+		promptFileNames.add("raw/zoo1_4.mp3");
+		promptFileNames.add("raw/zoo1_5.mp3");
 		return mySportsStory;
 	}
 	public Vector<Prompt> getZooStory1(){
@@ -382,11 +472,18 @@ public class Story {
 		myZooStory.add(prompt4);
 		myZooStory.add(prompt5);
 		myZooStory.add(prompt6);
-		audioFileName.add("raw/zoo1_1.mp3");
-		audioFileName.add("raw/zoo1_2.mp3");
-		audioFileName.add("raw/zoo1_3.mp3");
-		audioFileName.add("raw/zoo1_4.mp3");
-		audioFileName.add("raw/zoo1_5.mp3");
+		
+		commandFileNames.add("raw/zooc1_1.mp3");
+		commandFileNames.add("raw/zooc1_2.mp3");
+		commandFileNames.add("raw/zooc1_3.mp3");
+		commandFileNames.add("raw/zooc1_4.mp3");
+		commandFileNames.add("raw/zooc1_5.mp3");
+		
+		promptFileNames.add("raw/zoo1_1.mp3");
+		promptFileNames.add("raw/zoo1_2.mp3");
+		promptFileNames.add("raw/zoo1_3.mp3");
+		promptFileNames.add("raw/zoo1_4.mp3");
+		promptFileNames.add("raw/zoo1_5.mp3");
 		return myZooStory;
 	}
 	public Vector<Prompt> getZooStory2(){
@@ -401,11 +498,18 @@ public class Story {
 		myZooStory.add(prompt3);
 		myZooStory.add(prompt4);
 		myZooStory.add(prompt5);
-		audioFileName.add("raw/zoo2_1.mp3");
-		audioFileName.add("raw/zoo2_2.mp3");
-		audioFileName.add("raw/zoo2_3.mp3");
-		audioFileName.add("raw/zoo2_4.mp3");
-		audioFileName.add("raw/zoo2_5.mp3");
+		
+		commandFileNames.add("raw/zooc2_1.mp3");
+		commandFileNames.add("raw/zooc2_2.mp3");
+		commandFileNames.add("raw/zooc2_3.mp3");
+		commandFileNames.add("raw/zooc2_4.mp3");
+		commandFileNames.add("raw/zooc2_5.mp3");
+		
+		promptFileNames.add("raw/zoo2_1.mp3");
+		promptFileNames.add("raw/zoo2_2.mp3");
+		promptFileNames.add("raw/zoo2_3.mp3");
+		promptFileNames.add("raw/zoo2_4.mp3");
+		promptFileNames.add("raw/zoo2_5.mp3");
 		return myZooStory;
 	}
 	public Vector<Prompt> getZooStory3(){
@@ -420,13 +524,21 @@ public class Story {
 		myZooStory.add(prompt3);
 		myZooStory.add(prompt4);
 		myZooStory.add(prompt5);
-		audioFileName.add("raw/zoo3_1.mp3");
-		audioFileName.add("raw/zoo3_2.mp3");
-		audioFileName.add("raw/zoo3_3.mp3");
-		audioFileName.add("raw/zoo3_4.mp3");
-		audioFileName.add("raw/zoo3_5.mp3");
+		
+		commandFileNames.add("raw/zooc3_1.mp3");
+		commandFileNames.add("raw/zooc3_2.mp3");
+		commandFileNames.add("raw/zooc3_3.mp3");
+		commandFileNames.add("raw/zooc3_4.mp3");
+		commandFileNames.add("raw/zooc3_5.mp3");
+		
+		promptFileNames.add("raw/zoo3_1.mp3");
+		promptFileNames.add("raw/zoo3_2.mp3");
+		promptFileNames.add("raw/zoo3_3.mp3");
+		promptFileNames.add("raw/zoo3_4.mp3");
+		promptFileNames.add("raw/zoo3_5.mp3");
 		return myZooStory;
 	}
+
 	
 	
 
