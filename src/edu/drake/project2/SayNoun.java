@@ -172,8 +172,11 @@ public class SayNoun extends ActionBarActivity {
 		}
 		else{
 			Log.i("next", "in the else statment");
-			Intent intent = new Intent(getApplicationContext(), Play.class);
-			intent.putExtra("story", story);
+			//Problem starts here.
+			//Intent intent = new Intent(getApplicationContext(), Play.class);
+			//intent.putExtra("story", story);
+			//Problem ends here.
+			Intent intent = new Intent(this, Play.class);
 			startActivity(intent);
 			
 		}

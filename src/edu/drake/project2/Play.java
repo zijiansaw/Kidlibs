@@ -87,10 +87,11 @@ public class Play extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_play);	
+		
 		// hide the action bar
         getActionBar().hide();
 		
-	    
+	    /*Problem starts here.
 		story = (Story) getIntent().getSerializableExtra("story");
 	    
 	    //setup the vector of filenames to play
@@ -110,6 +111,7 @@ public class Play extends ActionBarActivity {
 		if(story.promptFileNames.size()>5 || story.promptFileNames.size() == 5 ){
 			files.add(story.promptFileNames.get(5));
 		}
+		Problem ends here.*/
 	    
 	}
 	
