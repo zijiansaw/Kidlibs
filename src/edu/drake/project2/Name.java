@@ -23,6 +23,8 @@ public class Name extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_name);
+		// hide the action bar
+        getActionBar().hide();
 	}
 
 	@Override

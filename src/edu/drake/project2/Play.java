@@ -80,12 +80,18 @@ public class Play extends ActionBarActivity {
 		Toast.makeText(this, "Playing audio.", Toast.LENGTH_LONG).show();
 
 	}	
-		
+	
+	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_play);	
-	    story = (Story) getIntent().getSerializableExtra("story");
+		// hide the action bar
+        getActionBar().hide();
+		
+	    
+		story = (Story) getIntent().getSerializableExtra("story");
 	    
 	    //setup the vector of filenames to play
 	    //TODO: Fix the one story that starts with a response, not a prompt.
@@ -106,6 +112,7 @@ public class Play extends ActionBarActivity {
 		}
 	    
 	}
+	
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

@@ -124,11 +124,11 @@ public class Story implements Serializable {
 	
 	//for the first draft, just hard code the stories into methods here. 
 	public Vector<Prompt> getStory1(){
-		Prompt prompt1 = new Prompt("Say a furry animal!", 0);
-		Prompt prompt2 = new Prompt("Say something you wear when it's cold outside!", 1);
-		Prompt prompt3 = new Prompt("Say something you use at school!", 2);
-		Prompt prompt4 = new Prompt("Say your favorite flavor of ice cream!", 3);
-		Prompt prompt5 = new Prompt("Say an animal that likes the cold!", 4);
+		Prompt prompt1 = new Prompt("a furry animal!", 0);
+		Prompt prompt2 = new Prompt("something you wear when it's cold outside!", 1);
+		Prompt prompt3 = new Prompt("something you use at school!", 2);
+		Prompt prompt4 = new Prompt("your favorite flavor of ice cream!", 3);
+		Prompt prompt5 = new Prompt("an animal that likes the cold!", 4);
 		Vector<Prompt> myBeachStory = new Vector<Prompt>();
 		commandFileNames.add("raw/beachc1_1");
 		commandFileNames.add("raw/beachc1_2");
@@ -149,11 +149,11 @@ public class Story implements Serializable {
 		return myBeachStory;
 	}
 	public Vector<Prompt> getStory2(){
-		Prompt prompt1 = new Prompt("Say a vegetable!", 0);
-		Prompt prompt2 = new Prompt("Say an ocean animal!", 1);
-		Prompt prompt3 = new Prompt("Say a farm animal!", 2);
-		Prompt prompt4 = new Prompt("Say a vegetable you don't like!", 3);
-		Prompt prompt5 = new Prompt("Say a fruit!", 4);
+		Prompt prompt1 = new Prompt("a vegetable!", 0);
+		Prompt prompt2 = new Prompt("an ocean animal!", 1);
+		Prompt prompt3 = new Prompt("a farm animal!", 2);
+		Prompt prompt4 = new Prompt("a vegetable you don't like!", 3);
+		Prompt prompt5 = new Prompt("a fruit!", 4);
 		Vector<Prompt> myBeachStory = new Vector<Prompt>();
 		myBeachStory.add(prompt1);
 		myBeachStory.add(prompt2);
@@ -173,11 +173,11 @@ public class Story implements Serializable {
 		return myBeachStory;
 	}
 	public Vector<Prompt> getStory3(){
-		Prompt prompt1 = new Prompt("Say a color!", 0);
-		Prompt prompt2 = new Prompt("Say your favoite kind of sandwich!", 1);
-		Prompt prompt3 = new Prompt("Say something you wear when it's warm outside!", 2);
-		Prompt prompt4 = new Prompt("Say something cold you like to eat in the summer!", 3);
-		Prompt prompt5 = new Prompt("Say a number!", 4);
+		Prompt prompt1 = new Prompt("a color!", 0);
+		Prompt prompt2 = new Prompt("your favoite kind of sandwich!", 1);
+		Prompt prompt3 = new Prompt("something you wear when it's warm outside!", 2);
+		Prompt prompt4 = new Prompt("something cold you like to eat in the summer!", 3);
+		Prompt prompt5 = new Prompt("a number!", 4);
 		Vector<Prompt> myBeachStory = new Vector<Prompt>();
 		myBeachStory.add(prompt1);
 		myBeachStory.add(prompt2);
@@ -197,11 +197,11 @@ public class Story implements Serializable {
 		return myBeachStory;
 	}
 	public Vector<Prompt> getSafariStory1(){
-		Prompt prompt1 = new Prompt("Say a color!", 0);
-		Prompt prompt2 = new Prompt("Say an ocean animal!", 1);
-		Prompt prompt3 = new Prompt("Say a size, like 'big' or 'small'!", 2);
-		Prompt prompt4 = new Prompt("Say a number!", 3);
-		Prompt prompt5 = new Prompt("Say a color!", 4);
+		Prompt prompt1 = new Prompt("a color!", 0);
+		Prompt prompt2 = new Prompt("an ocean animal!", 1);
+		Prompt prompt3 = new Prompt("a size, like 'big' or 'small'!", 2);
+		Prompt prompt4 = new Prompt("a number!", 3);
+		Prompt prompt5 = new Prompt("a color!", 4);
 		Vector<Prompt> mySafariStory = new Vector<Prompt>();
 		mySafariStory.add(prompt1);
 		mySafariStory.add(prompt2);
@@ -223,11 +223,11 @@ public class Story implements Serializable {
 		return mySafariStory;
 	}
 	public Vector<Prompt> getSafariStory2(){
-		Prompt prompt1 = new Prompt("Say a color!", 0);
-		Prompt prompt2 = new Prompt("Say the name of your town!", 1);
-		Prompt prompt3 = new Prompt("Say an ocean animal!", 2);
-		Prompt prompt4 = new Prompt("Say the name of a dinosaur!", 3);
-		Prompt prompt5 = new Prompt("Say a big animal!", 4);
+		Prompt prompt1 = new Prompt("a color!", 0);
+		Prompt prompt2 = new Prompt("the name of your town!", 1);
+		Prompt prompt3 = new Prompt("an ocean animal!", 2);
+		Prompt prompt4 = new Prompt("the name of a dinosaur!", 3);
+		Prompt prompt5 = new Prompt("a big animal!", 4);
 		Vector<Prompt> mySafariStory = new Vector<Prompt>();
 		mySafariStory.add(prompt1);
 		mySafariStory.add(prompt2);
@@ -250,11 +250,11 @@ public class Story implements Serializable {
 		return mySafariStory;
 	}
 	public Vector<Prompt> getSafariStory3(){
-		Prompt prompt1 = new Prompt("Say a kind of frosting!", 0);
-		Prompt prompt2 = new Prompt("Say a vegetable!", 1);
-		Prompt prompt3 = new Prompt("Say a type of fruit!", 2);
-		Prompt prompt4 = new Prompt("Say a number!", 3);
-		Prompt prompt5 = new Prompt("Say a color!", 4);
+		Prompt prompt1 = new Prompt("a kind of frosting!", 0);
+		Prompt prompt2 = new Prompt("a vegetable!", 1);
+		Prompt prompt3 = new Prompt("a type of fruit!", 2);
+		Prompt prompt4 = new Prompt("a number!", 3);
+		Prompt prompt5 = new Prompt("a color!", 4);
 		Vector<Prompt> mySafariStory = new Vector<Prompt>();
 		mySafariStory.add(prompt1);
 		mySafariStory.add(prompt2);
@@ -276,11 +276,11 @@ public class Story implements Serializable {
 		return mySafariStory;
 	}	
 	public Vector<Prompt> getSpaceStory1(){
-		Prompt prompt1 = new Prompt("Say a kind of ice cream!", 0);
-		Prompt prompt2 = new Prompt("Say a color!", 1);
-		Prompt prompt3 = new Prompt("Say a yellow animal!", 2);
-		Prompt prompt4 = new Prompt("Say a type of fruit!", 3);
-		Prompt prompt5 = new Prompt("Say something you use at the dinner table!", 4);
+		Prompt prompt1 = new Prompt("a kind of ice cream!", 0);
+		Prompt prompt2 = new Prompt("a color!", 1);
+		Prompt prompt3 = new Prompt("a yellow animal!", 2);
+		Prompt prompt4 = new Prompt("a type of fruit!", 3);
+		Prompt prompt5 = new Prompt("something you use at the dinner table!", 4);
 		Vector<Prompt> mySpaceStory = new Vector<Prompt>();
 		mySpaceStory.add(prompt1);
 		mySpaceStory.add(prompt2);
@@ -302,11 +302,11 @@ public class Story implements Serializable {
 		return mySpaceStory;
 	}
 	public Vector<Prompt> getSpaceStory2(){
-		Prompt prompt1 = new Prompt("Name a planet", 0);
-		Prompt prompt2 = new Prompt("Say your name!", 1);
-		Prompt prompt3 = new Prompt("Say a color!", 2);
-		Prompt prompt4 = new Prompt("Say your favorite candy!", 3);
-		Prompt prompt5 = new Prompt("Say a color!", 4);
+		Prompt prompt1 = new Prompt("a planet!", 0);
+		Prompt prompt2 = new Prompt("your name!", 1);
+		Prompt prompt3 = new Prompt("a color!", 2);
+		Prompt prompt4 = new Prompt("your favorite candy!", 3);
+		Prompt prompt5 = new Prompt("a color!", 4);
 		Vector<Prompt> mySpaceStory = new Vector<Prompt>();
 		mySpaceStory.add(prompt1);
 		mySpaceStory.add(prompt2);
@@ -328,11 +328,11 @@ public class Story implements Serializable {
 		return mySpaceStory;
 	}
 	public Vector<Prompt> getSpaceStory3(){
-		Prompt prompt1 = new Prompt("Say the name of your town!", 0);
-		Prompt prompt2 = new Prompt("Say a planet!", 1);
-		Prompt prompt3 = new Prompt("Say your name!", 2);
-		Prompt prompt4 = new Prompt("Say a vegetable!", 3);
-		Prompt prompt5 = new Prompt("Say another planet!", 4);
+		Prompt prompt1 = new Prompt("the name of your town!", 0);
+		Prompt prompt2 = new Prompt("a planet!", 1);
+		Prompt prompt3 = new Prompt("your name!", 2);
+		Prompt prompt4 = new Prompt("a vegetable!", 3);
+		Prompt prompt5 = new Prompt("another planet!", 4);
 		Vector<Prompt> mySpaceStory = new Vector<Prompt>();
 		mySpaceStory.add(prompt1);
 		mySpaceStory.add(prompt2);
@@ -354,11 +354,11 @@ public class Story implements Serializable {
 		return mySpaceStory;
 	}
 	public Vector<Prompt> getSportsStory1(){
-		Prompt prompt1 = new Prompt("Say the name of a bug", 0);
-		Prompt prompt2 = new Prompt("Say your favorite cartoon character!", 1);
-		Prompt prompt3 = new Prompt("Say a vegetable!", 2);
-		Prompt prompt4 = new Prompt("Say a place!", 3);
-		Prompt prompt5 = new Prompt("Say a soft animal!", 4);
+		Prompt prompt1 = new Prompt("the name of a bug!", 0);
+		Prompt prompt2 = new Prompt("your favorite cartoon character!", 1);
+		Prompt prompt3 = new Prompt("a vegetable!", 2);
+		Prompt prompt4 = new Prompt("a place!", 3);
+		Prompt prompt5 = new Prompt("a soft animal!", 4);
 		Vector<Prompt> mySportsStory = new Vector<Prompt>();
 		mySportsStory.add(prompt1);
 		mySportsStory.add(prompt2);
@@ -380,11 +380,11 @@ public class Story implements Serializable {
 		return mySportsStory;
 	}
 	public Vector<Prompt> getSportsStory2(){
-		Prompt prompt1 = new Prompt("Say the name of a bug", 0);
-		Prompt prompt2 = new Prompt("Say your favorite cartoon character!", 1);
-		Prompt prompt3 = new Prompt("Say a vegetable!", 2);
-		Prompt prompt4 = new Prompt("Say a place!", 3);
-		Prompt prompt5 = new Prompt("Say a soft animal!", 4);
+		Prompt prompt1 = new Prompt("the name of a bug.", 0);
+		Prompt prompt2 = new Prompt("your favorite cartoon character!", 1);
+		Prompt prompt3 = new Prompt("a vegetable!", 2);
+		Prompt prompt4 = new Prompt("a place!", 3);
+		Prompt prompt5 = new Prompt("a soft animal!", 4);
 		Vector<Prompt> mySportsStory = new Vector<Prompt>();
 		mySportsStory.add(prompt1);
 		mySportsStory.add(prompt2);
@@ -406,11 +406,11 @@ public class Story implements Serializable {
 		return mySportsStory;
 	}
 	public Vector<Prompt> getSportsStory3(){
-		Prompt prompt1 = new Prompt("Say something you wear around your neck!", 0);
-		Prompt prompt2 = new Prompt("Say a color!", 1);
-		Prompt prompt3 = new Prompt("Say sometihng you do at recess!", 2);
-		Prompt prompt4 = new Prompt("Say your favorite kind of candy!", 3);
-		Prompt prompt5 = new Prompt("Say the name of a superhero!", 4);
+		Prompt prompt1 = new Prompt("something you wear around your neck!", 0);
+		Prompt prompt2 = new Prompt("a color!", 1);
+		Prompt prompt3 = new Prompt("something you do at recess!", 2);
+		Prompt prompt4 = new Prompt("your favorite kind of candy!", 3);
+		Prompt prompt5 = new Prompt("the name of a superhero!", 4);
 		Vector<Prompt> mySportsStory = new Vector<Prompt>();
 		mySportsStory.add(prompt1);
 		mySportsStory.add(prompt2);
@@ -433,11 +433,11 @@ public class Story implements Serializable {
 	}
 	//not exactly sure this one does the right thing or is ever called.
 	public Vector<Prompt> getSportsStory4(){
-		Prompt prompt1 = new Prompt("Say a vegetable", 0);
-		Prompt prompt2 = new Prompt("Say your favorite ice cream sundae topping!", 1);
-		Prompt prompt3 = new Prompt("Say the name of a farm animal!", 2);
-		Prompt prompt4 = new Prompt("Say your favoite restaurant!", 3);
-		Prompt prompt5 = new Prompt("Say something you use to bake a cake!", 4);
+		Prompt prompt1 = new Prompt("a vegetable!", 0);
+		Prompt prompt2 = new Prompt("your favorite ice cream sundae topping!", 1);
+		Prompt prompt3 = new Prompt("the name of a farm animal!", 2);
+		Prompt prompt4 = new Prompt("your favoite restaurant!", 3);
+		Prompt prompt5 = new Prompt("something you use to bake a cake!", 4);
 		Vector<Prompt> mySportsStory = new Vector<Prompt>();
 		mySportsStory.add(prompt1);
 		mySportsStory.add(prompt2);
@@ -459,12 +459,12 @@ public class Story implements Serializable {
 		return mySportsStory;
 	}
 	public Vector<Prompt> getZooStory1(){
-		Prompt prompt1 = new Prompt("Say a color", 0);
-		Prompt prompt2 = new Prompt("Say a size, like 'small' or 'large'!", 1);
-		Prompt prompt3 = new Prompt("Say a vegetable!", 2);
-		Prompt prompt4 = new Prompt("Say an ocean animal!", 3);
-		Prompt prompt5 = new Prompt("Say something you eat for lunch!", 4);
-		Prompt prompt6 = new Prompt("Say the name of a city", 5);
+		Prompt prompt1 = new Prompt("a color", 0);
+		Prompt prompt2 = new Prompt("a size, like 'small' or 'large'!", 1);
+		Prompt prompt3 = new Prompt("a vegetable!", 2);
+		Prompt prompt4 = new Prompt("an ocean animal!", 3);
+		Prompt prompt5 = new Prompt("something you eat for lunch!", 4);
+		Prompt prompt6 = new Prompt("the name of a city", 5);
 		Vector<Prompt> myZooStory = new Vector<Prompt>();
 		myZooStory.add(prompt1);
 		myZooStory.add(prompt2);
@@ -487,11 +487,11 @@ public class Story implements Serializable {
 		return myZooStory;
 	}
 	public Vector<Prompt> getZooStory2(){
-		Prompt prompt1 = new Prompt("Say a planet", 0);
-		Prompt prompt2 = new Prompt("Say a color!", 1);
-		Prompt prompt3 = new Prompt("Say a farm animal!", 2);
-		Prompt prompt4 = new Prompt("Say a large number!", 3);
-		Prompt prompt5 = new Prompt("Say your name!", 4);
+		Prompt prompt1 = new Prompt("a planet!", 0);
+		Prompt prompt2 = new Prompt("a color!", 1);
+		Prompt prompt3 = new Prompt("a farm animal!", 2);
+		Prompt prompt4 = new Prompt("a large number!", 3);
+		Prompt prompt5 = new Prompt("your name!", 4);
 		Vector<Prompt> myZooStory = new Vector<Prompt>();
 		myZooStory.add(prompt1);
 		myZooStory.add(prompt2);
@@ -513,11 +513,11 @@ public class Story implements Serializable {
 		return myZooStory;
 	}
 	public Vector<Prompt> getZooStory3(){
-		Prompt prompt1 = new Prompt("Say a color", 0);
-		Prompt prompt2 = new Prompt("Say your favoite color of ice cream!", 1);
-		Prompt prompt3 = new Prompt("Say your favoite kind of Kool-Aid!", 2);
-		Prompt prompt4 = new Prompt("Say the name of a vegetable you don't like!", 3);
-		Prompt prompt5 = new Prompt("Say what you ate for breakfast this morning!", 4);
+		Prompt prompt1 = new Prompt("a color!", 0);
+		Prompt prompt2 = new Prompt("your favoite color of ice cream!", 1);
+		Prompt prompt3 = new Prompt("your favoite kind of Kool-Aid!", 2);
+		Prompt prompt4 = new Prompt("the name of a vegetable you don't like!", 3);
+		Prompt prompt5 = new Prompt("what you ate for breakfast this morning!", 4);
 		Vector<Prompt> myZooStory = new Vector<Prompt>();
 		myZooStory.add(prompt1);
 		myZooStory.add(prompt2);

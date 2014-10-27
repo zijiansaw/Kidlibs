@@ -40,7 +40,9 @@ public class SayNoun extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_say_noun);
-		
+		// hide the action bar
+        getActionBar().hide();
+        
 		int category = getIntent().getIntExtra("category", -1);
 
 		//check to see if category was passed correctly
@@ -154,10 +156,10 @@ public class SayNoun extends ActionBarActivity {
 	public void next(View view){
 		ImageView image = (ImageView) findViewById(R.id.progress);
 		int progress[] = {
-				getResources().getIdentifier("drawable/dog3", null, getPackageName()),
-				getResources().getIdentifier("drawable/dog4", null, getPackageName()),
-				getResources().getIdentifier("drawable/dog5", null, getPackageName()),
-				getResources().getIdentifier("drawable/dog6", null, getPackageName())
+				getResources().getIdentifier("drawable/progress_button_2", null, getPackageName()),
+				getResources().getIdentifier("drawable/progress_button_3", null, getPackageName()),
+				getResources().getIdentifier("drawable/progress_button_4", null, getPackageName()),
+				getResources().getIdentifier("drawable/progress_button_5", null, getPackageName())
 				};
 		if(i<4){
 			i++;
