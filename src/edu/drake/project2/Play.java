@@ -87,7 +87,6 @@ public class Play extends ActionBarActivity {
 
 	}	
 	
-	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -97,7 +96,7 @@ public class Play extends ActionBarActivity {
 		// hide the action bar
         getActionBar().hide();
 		
-	    Problem starts here.
+        
 		story = (Story) getIntent().getSerializableExtra("story");
 	    
 	    //setup the vector of filenames to play
@@ -105,30 +104,46 @@ public class Play extends ActionBarActivity {
 	    //TODO: Also record a snippet of silence to set as beach1_3, change beach1_3 and beach1_4
 	    
 						//Larry's code
-						String cache1 = null,cache2=null,cache3=null,cache4=null,cache5=null,cache6=null;
-						int beach1 = R.raw.beach1_1;
-						InputStream x1=getResources().openRawResource(beach1);
+						String cache0 = null,cache1 = null,cache2=null,cache3=null,cache4=null,cache5=null,cache6=null;
+						InputStream x0=getResources().openRawResource(story.promptFileNames.get(0));
+						InputStream x1=getResources().openRawResource(story.promptFileNames.get(1));
+						InputStream x2=getResources().openRawResource(story.promptFileNames.get(2));
+						InputStream x3=getResources().openRawResource(story.promptFileNames.get(3));
+						InputStream x4=getResources().openRawResource(story.promptFileNames.get(4));
 						try {
+							saveFile(cache0,x0);
 							saveFile(cache1,x1);
+							saveFile(cache2,x2);
+							saveFile(cache3,x3);
+							saveFile(cache4,x4);
+							
 						} catch (FileNotFoundException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
 						
-		files.add(story.promptFileNames.get(0));
+		files.add(Environment.getExternalStorageDirectory().getAbsolutePath() + "/cache0.3gp");
 		files.add(Environment.getExternalStorageDirectory().getAbsolutePath() + "/res0.3gp");
-		files.add(story.promptFileNames.get(1));
+		files.add(Environment.getExternalStorageDirectory().getAbsolutePath() + "/cache1.3gp");
 		files.add(Environment.getExternalStorageDirectory().getAbsolutePath() + "/res1.3gp");
-		files.add(story.promptFileNames.get(2));
+		files.add(Environment.getExternalStorageDirectory().getAbsolutePath() + "/cache2.3gp");
 		files.add(Environment.getExternalStorageDirectory().getAbsolutePath() + "/res2.3gp");
-		files.add(story.promptFileNames.get(3));
+		files.add(Environment.getExternalStorageDirectory().getAbsolutePath() + "/cache3.3gp");
 		files.add(Environment.getExternalStorageDirectory().getAbsolutePath() + "/res3.3gp");
-		files.add(story.promptFileNames.get(4));
+		files.add(Environment.getExternalStorageDirectory().getAbsolutePath() + "/cache4.3gp");
 		files.add(Environment.getExternalStorageDirectory().getAbsolutePath() + "/res4.3gp");
-		if(story.promptFileNames.size()>5 || story.promptFileNames.size() == 5 ){
-			files.add(story.promptFileNames.get(5));
+		if(story.promptFileNames.size()>5 || story.promptFileNames.size() == 5 )
+		{
+			InputStream x5=getResources().openRawResource(story.promptFileNames.get(0));
+			try {
+				saveFile(cache5,x5);
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			files.add(Environment.getExternalStorageDirectory().getAbsolutePath() + "/cache5.3gp");
 		}
-		//Problem ends here.
+		
 	    
 	}
 	
