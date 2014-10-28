@@ -9,46 +9,36 @@
     tools:context="edu.drake.project2.Play" 
     android:background="@drawable/background">
 
-   <Button
-       android:id="@+id/library"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:layout_alignLeft="@+id/textView1"
-       android:layout_alignParentBottom="true"
-       android:layout_marginBottom="46dp"
-       android:onClick="sendMessage"
-       android:text="Save your Story!" />
-
-   <TextView
+    
+   	<TextView
        android:id="@+id/textView1"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
        android:layout_alignParentTop="true"
        android:layout_centerHorizontal="true"
-       android:layout_marginTop="44dp"
+       android:layout_marginTop="34dp"
        android:gravity="center"
        android:text="Do you want to listen to your story?"
-       android:textAppearance="?android:attr/textAppearanceLarge" />
+       android:textAppearance="?android:attr/textAppearanceLargeInverse"
+       android:textStyle="bold" />
+   
+   <ImageButton
+       android:id="@+id/imageButton2"
+       android:layout_width="match_parent"
+       android:layout_height="50dp"
+       android:layout_alignLeft="@+id/textView1"
+       android:layout_below="@+id/imageButton1"
+       android:layout_marginTop="14dp"
+       android:background="@drawable/button_white_outline"
+       android:onClick="sendMessage" />
 
    <ImageButton
-       android:id="@+id/pause"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
+       android:id="@+id/imageButton1"
+       android:layout_width="200dp"
+       android:layout_height="200dp"
        android:layout_centerHorizontal="true"
        android:layout_centerVertical="true"
-       android:onClick="playAll"
-       android:visibility="invisible"
-       android:src="@drawable/pause" />
-
-   <ImageButton
-       android:id="@+id/play"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:layout_alignLeft="@+id/pause"
-       android:layout_centerVertical="true"
-       android:onClick="playAll"
-       android:src="@drawable/play" />
-
-"
+       android:background="@drawable/button_play"
+       android:onClick="playAll" />
 
 </RelativeLayout>

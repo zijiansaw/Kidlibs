@@ -181,6 +181,8 @@ public class SayNoun extends ActionBarActivity {
 			
 		}
 	}
+	
+	
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

@@ -1,6 +1,10 @@
 package edu.drake.project2;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.Serializable;
 import java.util.Vector;
 
@@ -30,7 +34,9 @@ public class Play extends ActionBarActivity {
 	public void sendMessage(View view){
 		Intent intent = new Intent(this, Name.class);
 		startActivity(intent);
-	}	
+	}
+	
+	
 	
 	public void playAll(View view) throws IllegalArgumentException, SecurityException, IllegalStateException, IOException
 	{
@@ -91,14 +97,25 @@ public class Play extends ActionBarActivity {
 		// hide the action bar
         getActionBar().hide();
 		
-	    /*Problem starts here.
+	    Problem starts here.
 		story = (Story) getIntent().getSerializableExtra("story");
 	    
 	    //setup the vector of filenames to play
 	    //TODO: Fix the one story that starts with a response, not a prompt.
 	    //TODO: Also record a snippet of silence to set as beach1_3, change beach1_3 and beach1_4
 	    
-	    files.add(story.promptFileNames.get(0));
+						//Larry's code
+						String cache1 = null,cache2=null,cache3=null,cache4=null,cache5=null,cache6=null;
+						int beach1 = R.raw.beach1_1;
+						InputStream x1=getResources().openRawResource(beach1);
+						try {
+							saveFile(cache1,x1);
+						} catch (FileNotFoundException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						
+		files.add(story.promptFileNames.get(0));
 		files.add(Environment.getExternalStorageDirectory().getAbsolutePath() + "/res0.3gp");
 		files.add(story.promptFileNames.get(1));
 		files.add(Environment.getExternalStorageDirectory().getAbsolutePath() + "/res1.3gp");
@@ -111,8 +128,34 @@ public class Play extends ActionBarActivity {
 		if(story.promptFileNames.size()>5 || story.promptFileNames.size() == 5 ){
 			files.add(story.promptFileNames.get(5));
 		}
-		Problem ends here.*/
+		//Problem ends here.
 	    
+	}
+	
+	public void saveFile(String filename,InputStream z) throws FileNotFoundException
+	{
+		String outputFile = Environment.getExternalStorageDirectory()+"/"+filename+".3gp";
+		File outFile = new File(outputFile);
+		
+		FileOutputStream fos = new FileOutputStream(outFile);
+
+        byte[] data = new byte[1024];
+        try {
+        	    
+        	for (int readNum; (readNum = z.read(data)) != -1;)
+        	{
+        		fos.write(data, 0, readNum);
+        	}
+            z.close();
+            fos.close();
+            
+            Toast.makeText(this, "Save inputstream as "+ filename+"!!", Toast.LENGTH_LONG).show();
+            
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        
 	}
 	
 

@@ -15,8 +15,7 @@ public class Category extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_category);
-		// hide the action bar
-        getActionBar().hide();
+		
 		
 		//create buttons and onClickListeners for each categories
 		Button beachBtn = (Button) findViewById(R.id.button3);
@@ -75,6 +74,8 @@ public class Category extends ActionBarActivity {
 			}
 			
 		});
+		// hide the action bar
+        getActionBar().hide();
 	}
 
 	@Override

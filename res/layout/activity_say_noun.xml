@@ -19,16 +19,6 @@
         android:layout_marginLeft="34dp"
         android:layout_marginTop="34dp" />
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="100dp"
-        android:layout_height="60dp"
-        android:layout_below="@+id/imageButton1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="28dp"
-        android:onClick="next"
-        android:text="Next" />
-
     <ImageView
         android:id="@+id/progress"
         android:layout_width="wrap_content"
@@ -51,11 +41,11 @@
 
     <ImageButton
         android:id="@+id/imageButton1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/button1"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:src="@drawable/ico_mic" />
+        android:background="@drawable/button_microphone" />
 
     <TextView
         android:id="@+id/textView2"
@@ -63,9 +53,18 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="34dp"
         android:text="Tap the button and say"
         android:textAppearance="?android:attr/textAppearanceLargeInverse"
         android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/imageButton1"
+        android:layout_centerHorizontal="true"
+        android:onClick="next"
+        android:text="Next" />
 
 </RelativeLayout>

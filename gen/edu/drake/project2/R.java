@@ -1079,19 +1079,20 @@ containing a value of this type.
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
         public static final int background=0x7f020057;
         public static final int button_microphone=0x7f020058;
-        public static final int homebackground=0x7f020059;
-        public static final int ic_launcher=0x7f02005a;
-        public static final int ico_mic=0x7f02005b;
-        public static final int kidlibs_ic_launcher=0x7f02005c;
-        public static final int mystoriesbutton=0x7f02005d;
-        public static final int pause=0x7f02005e;
-        public static final int play=0x7f02005f;
-        public static final int progress_button_1=0x7f020060;
-        public static final int progress_button_2=0x7f020061;
-        public static final int progress_button_3=0x7f020062;
-        public static final int progress_button_4=0x7f020063;
-        public static final int progress_button_5=0x7f020064;
-        public static final int tellastorybutton=0x7f020065;
+        public static final int button_play=0x7f020059;
+        public static final int button_white_outline=0x7f02005a;
+        public static final int homebackground=0x7f02005b;
+        public static final int ic_launcher=0x7f02005c;
+        public static final int ico_mic=0x7f02005d;
+        public static final int kidlibs_ic_launcher=0x7f02005e;
+        public static final int mystoriesbutton=0x7f02005f;
+        public static final int pause=0x7f020060;
+        public static final int progress_button_1=0x7f020061;
+        public static final int progress_button_2=0x7f020062;
+        public static final int progress_button_3=0x7f020063;
+        public static final int progress_button_4=0x7f020064;
+        public static final int progress_button_5=0x7f020065;
+        public static final int tellastorybutton=0x7f020066;
     }
     public static final class id {
         public static final int action_bar=0x7f06001c;
@@ -1105,7 +1106,7 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f060016;
         public static final int action_menu_presenter=0x7f060017;
         public static final int action_mode_close_button=0x7f060024;
-        public static final int action_settings=0x7f06004c;
+        public static final int action_settings=0x7f06004b;
         public static final int activity_chooser_view_content=0x7f060025;
         public static final int always=0x7f06000b;
         public static final int beginning=0x7f060011;
@@ -1130,7 +1131,8 @@ containing a value of this type.
         public static final int icon=0x7f06002a;
         public static final int ifRoom=0x7f06000a;
         public static final int image=0x7f060027;
-        public static final int imageButton1=0x7f060048;
+        public static final int imageButton1=0x7f060046;
+        public static final int imageButton2=0x7f060045;
         public static final int library=0x7f060042;
         public static final int listMode=0x7f060001;
         public static final int list_item=0x7f060029;
@@ -1140,9 +1142,7 @@ containing a value of this type.
         public static final int never=0x7f060009;
         public static final int none=0x7f060010;
         public static final int normal=0x7f060000;
-        public static final int pause=0x7f060045;
-        public static final int play=0x7f060046;
-        public static final int progress=0x7f060049;
+        public static final int progress=0x7f060048;
         public static final int progress_circular=0x7f060018;
         public static final int progress_horizontal=0x7f060019;
         public static final int radio=0x7f06002f;
@@ -1161,11 +1161,11 @@ containing a value of this type.
         public static final int showHome=0x7f060004;
         public static final int showTitle=0x7f060006;
         public static final int split_action_bar=0x7f06001e;
-        public static final int storyName=0x7f06004b;
+        public static final int storyName=0x7f06004a;
         public static final int submit_area=0x7f060039;
         public static final int tabMode=0x7f060002;
         public static final int textView1=0x7f060041;
-        public static final int textView2=0x7f06004a;
+        public static final int textView2=0x7f060049;
         public static final int title=0x7f06002b;
         public static final int top_action_bar=0x7f060020;
         public static final int up=0x7f060021;
