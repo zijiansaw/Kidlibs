@@ -42,7 +42,7 @@ public class SayNoun extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_say_noun);
 
-		int category = getIntent().getIntExtra("category", -1);
+		category = getIntent().getIntExtra("category", -1);
 		message("categoy"+ category);
 
 		//check to see if category was passed correctly

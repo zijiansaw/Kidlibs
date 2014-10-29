@@ -97,7 +97,11 @@ public class Play extends ActionBarActivity {
 		
 		// hide the action bar
         getActionBar().hide();
-		
+        
+        
+        //Bundle extras = getIntent().getExtras();
+        //int category = extras.getInt("storyCategory");
+        //int storyNum = extras.getInt("storyNum");
         int category = getIntent().getIntExtra("storyCategory", -1);
       
         int storyNum = getIntent().getIntExtra("storyNum", -1);
