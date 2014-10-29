@@ -1,5 +1,6 @@
 package edu.drake.project2;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -8,11 +9,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class Category extends ActionBarActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		message("created Category screen");
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_category);
 		
@@ -30,6 +33,7 @@ public class Category extends ActionBarActivity {
 			public void onClick(View arg0) {
 				Intent intent = new Intent(getApplicationContext(), SayNoun.class);
 				intent.putExtra("category", 0);
+				message("category 0, intent set up");
 				startActivity(intent);
 			}
 			
@@ -83,6 +87,14 @@ public class Category extends ActionBarActivity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.category, menu);
 		return true;
+	}
+	//method for showing message to user
+	public void message(String message){
+		Context context = getApplicationContext();
+		CharSequence text = message;
+		int duration = Toast.LENGTH_SHORT;
+		Toast toast = Toast.makeText(context, text, duration);
+		toast.show();
 	}
 
 	@Override

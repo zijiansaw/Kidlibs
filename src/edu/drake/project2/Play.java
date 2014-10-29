@@ -29,6 +29,7 @@ public class Play extends ActionBarActivity {
    	String[] files=new String[12];
     MediaPlayer mediaPlayer;
     Story story;
+    Vector <Integer> promptFileNames = new Vector<Integer>();
 
 
 	public void sendMessage(View view){
@@ -96,15 +97,19 @@ public class Play extends ActionBarActivity {
 		// hide the action bar
         getActionBar().hide();
 		
-        
+        int category = getIntent().getIntExtra("storyCategory", -1);
 		//story = (Story) getIntent().getSerializableExtra("story");
+        int storyNum = getIntent().getIntExtra("storyNum", -1);
+        if(storyNum<0){
+        	System.out.println("storyNum not passed correctly");
+        }
 	    
 	    //setup the vector of filenames to play
 	    //TODO: Fix the one story that starts with a response, not a prompt.
 	    //TODO: Also record a snippet of silence to set as beach1_3, change beach1_3 and beach1_4
 	    
 		//Larry's code
-        story=new Story(0);
+        story=new Story(category, storyNum);
 		InputStream x0=getResources().openRawResource(story.promptFileNames.get(0));
 		InputStream x1=getResources().openRawResource(story.promptFileNames.get(1));
 		InputStream x2=getResources().openRawResource(story.promptFileNames.get(2));
@@ -176,7 +181,15 @@ public class Play extends ActionBarActivity {
 		getMenuInflater().inflate(R.menu.play, menu);
 		return true;
 	}
-
+	@Override
+	public void onPause(){
+		if(mediaPlayer != null){
+			mediaPlayer.pause();
+			mediaPlayer.stop();
+		}
+		super.onPause();
+	}
+	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// Handle action bar item clicks here. The action bar will
@@ -189,4 +202,131 @@ public class Play extends ActionBarActivity {
 		return super.onOptionsItemSelected(item);
 	}
 
+	void getStory(int cat, int num){
+		if(cat == 0){
+			if(num ==0){
+
+				promptFileNames.add(R.raw.beach1_1);
+				promptFileNames.add(R.raw.beach1_2);
+				//TODO: promptFileNames.add(R.raw.beach1_);
+				promptFileNames.add(R.raw.beach1_3);
+				promptFileNames.add(R.raw.beach1_4);
+				
+			}else if (num ==1){
+
+				promptFileNames.add(R.raw.beach2_1);
+				promptFileNames.add(R.raw.beach2_2);
+				promptFileNames.add(R.raw.beach2_3);
+				promptFileNames.add(R.raw.beach2_4);
+				promptFileNames.add(R.raw.beach2_5);
+				
+				
+			}else if (num ==2){
+				promptFileNames.add(R.raw.beach3_1);
+				promptFileNames.add(R.raw.beach3_2);
+				promptFileNames.add(R.raw.beach3_3);
+				promptFileNames.add(R.raw.beach3_4);
+				promptFileNames.add(R.raw.beach3_5);
+			}
+		}
+		else if (cat==1){
+			if(num ==0){				
+				promptFileNames.add(R.raw.safari1_1);
+				promptFileNames.add(R.raw.safari1_2);
+				promptFileNames.add(R.raw.safari1_3);
+				promptFileNames.add(R.raw.safari1_4);
+				promptFileNames.add(R.raw.safari1_5);
+				
+			}else if (num ==1){
+
+				promptFileNames.add(R.raw.safari2_1);
+				promptFileNames.add(R.raw.safari2_2);
+				promptFileNames.add(R.raw.safari2_3);
+				promptFileNames.add(R.raw.safari2_4);
+				promptFileNames.add(R.raw.safari2_5);
+				
+			}else if (num ==2){
+				promptFileNames.add(R.raw.safari3_1);
+				promptFileNames.add(R.raw.safari3_2);
+				promptFileNames.add(R.raw.safari3_3);
+				promptFileNames.add(R.raw.safari3_4);
+				promptFileNames.add(R.raw.safari3_5);
+			}
+		}
+		else if (cat==2){
+			if(num ==0){
+
+				promptFileNames.add(R.raw.space1_1);
+				promptFileNames.add(R.raw.space1_2);
+				promptFileNames.add(R.raw.space1_3);
+				promptFileNames.add(R.raw.space1_4);
+				promptFileNames.add(R.raw.space1_5);
+				
+			}else if (num ==1){
+
+				promptFileNames.add(R.raw.space2_1);
+				promptFileNames.add(R.raw.space2_2);
+				promptFileNames.add(R.raw.space2_3);
+				promptFileNames.add(R.raw.space2_4);
+				promptFileNames.add(R.raw.space2_5);
+			}else if (num ==2){
+
+				promptFileNames.add(R.raw.space3_1);
+				promptFileNames.add(R.raw.space3_2);
+				promptFileNames.add(R.raw.space3_3);
+				promptFileNames.add(R.raw.space3_4);
+				promptFileNames.add(R.raw.space3_5);
+			}
+		}
+		else if(cat ==3){
+			if(num ==0){
+
+				promptFileNames.add(R.raw.sports1_1);
+				promptFileNames.add(R.raw.sports1_2);
+				promptFileNames.add(R.raw.sports1_3);
+				promptFileNames.add(R.raw.sports1_4);
+				promptFileNames.add(R.raw.sports1_5);
+				
+			}else if (num ==1){
+
+				promptFileNames.add(R.raw.sports2_1);
+				promptFileNames.add(R.raw.sports2_2);
+				promptFileNames.add(R.raw.sports2_3);
+				promptFileNames.add(R.raw.sports2_4);
+				promptFileNames.add(R.raw.sports2_5);
+				
+			}else if (num ==2){
+				promptFileNames.add(R.raw.sports3_1);
+				promptFileNames.add(R.raw.sports3_2);
+				promptFileNames.add(R.raw.sports3_3);
+				promptFileNames.add(R.raw.sports3_4);
+				promptFileNames.add(R.raw.sports3_5);
+			}
+		}
+		else if (cat==4){
+			if(num ==0){
+
+				promptFileNames.add(R.raw.zoo1_1);
+				promptFileNames.add(R.raw.zoo1_2);
+				promptFileNames.add(R.raw.zoo1_3);
+				promptFileNames.add(R.raw.zoo1_4);
+				promptFileNames.add(R.raw.zoo1_5);
+				
+			}else if (num ==1){
+
+				promptFileNames.add(R.raw.zoo2_1);
+				promptFileNames.add(R.raw.zoo2_2);
+				promptFileNames.add(R.raw.zoo2_3);
+				promptFileNames.add(R.raw.zoo2_4);
+				promptFileNames.add(R.raw.zoo2_5);
+			}else if (num ==2){
+
+				promptFileNames.add(R.raw.zoo3_1);
+				promptFileNames.add(R.raw.zoo3_2);
+				promptFileNames.add(R.raw.zoo3_3);
+				promptFileNames.add(R.raw.zoo3_4);
+				promptFileNames.add(R.raw.zoo3_5);
+			}
+		}
+	}
 }

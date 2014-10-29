@@ -29,13 +29,15 @@ public class SayNoun extends ActionBarActivity {
 	private String outputFile0, outputFile1, outputFile2, outputFile3, outputFile4, storyOutputFile, outputFileName = null;
 	private MediaRecorder myAudioRecorder;
 	Vector <String> outputFileNames = new Vector <String>();
-	int i=0, numPrompts=0;
+	int i=0, numPrompts=0, storyNum;
 	Story story;
 	TextView txtLabel;
+	int category;
 	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		message("in onCreate of SayNoun");
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_say_noun);
 
@@ -49,10 +51,12 @@ public class SayNoun extends ActionBarActivity {
 		//Pull a random story from category
 		story = new Story(category);
 		numPrompts= story.myPromptList.size();
+		storyNum = story.storyNum;
 
 		//Set the text of the label to the given prompt
 		txtLabel = (TextView)findViewById(R.id.textView1);
 		txtLabel.setText(story.myPromptList.get(i).getPromptString());
+		message("Prompt text view set");
 
 		setUpAudio();
 
@@ -155,15 +159,12 @@ public class SayNoun extends ActionBarActivity {
 		}
 		else{
 			Log.i("next", "in the else statment");
-			//create the storyOutputFile
-			//storyOutputFile = Environment.getExternalStorageDirectory().getAbsolutePath() + "/story.3gp";;
-
-			//concatenate the strings here
 
 			//go to the play my story screen
 			Intent intent = new Intent(getApplicationContext(), Play.class);
 
-			//intent.putExtra("storyPath", storyOutputFile);
+			intent.putExtra("storyNum", storyNum);
+			intent.putExtra("storyCategory", category);
 			startActivity(intent);
 		}
 	}
