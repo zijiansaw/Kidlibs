@@ -26,7 +26,7 @@ public class Play extends ActionBarActivity {
 	Button playBtn;
     Button pauseBtn;
     int audioindex;
-   	Vector <String> files;
+   	String[] files=new String[12];
     MediaPlayer mediaPlayer;
     Story story;
 
@@ -42,7 +42,7 @@ public class Play extends ActionBarActivity {
 	{
 		audioindex=1;
 		mediaPlayer =  new MediaPlayer();
-		mediaPlayer.setDataSource(files.get(0));
+		mediaPlayer.setDataSource(files[0]);
 		mediaPlayer.prepare();
 		
 		mediaPlayer.setOnCompletionListener(new OnCompletionListener()
@@ -53,14 +53,14 @@ public class Play extends ActionBarActivity {
 		    	try {
 		    		
 		    		mediaPlayer.reset();
-		    		if(audioindex==5)
+		    		if(audioindex==11)
 		    		{
 		    			mediaPlayer.release();
 		                mediaPlayer = null;
 		    		}
 		    		else
 		    		{
-		    			mediaPlayer.setDataSource(files.get(audioindex));
+		    			mediaPlayer.setDataSource(files[audioindex]);
 			    		mediaPlayer.prepare();
 			    		mediaPlayer.start();
 				    	audioindex+=1;
@@ -97,54 +97,53 @@ public class Play extends ActionBarActivity {
         getActionBar().hide();
 		
         
-		story = (Story) getIntent().getSerializableExtra("story");
+		//story = (Story) getIntent().getSerializableExtra("story");
 	    
 	    //setup the vector of filenames to play
 	    //TODO: Fix the one story that starts with a response, not a prompt.
 	    //TODO: Also record a snippet of silence to set as beach1_3, change beach1_3 and beach1_4
 	    
-						//Larry's code
-						String cache0 = null,cache1 = null,cache2=null,cache3=null,cache4=null,cache5=null,cache6=null;
-						InputStream x0=getResources().openRawResource(story.promptFileNames.get(0));
-						InputStream x1=getResources().openRawResource(story.promptFileNames.get(1));
-						InputStream x2=getResources().openRawResource(story.promptFileNames.get(2));
-						InputStream x3=getResources().openRawResource(story.promptFileNames.get(3));
-						InputStream x4=getResources().openRawResource(story.promptFileNames.get(4));
-						try {
-							saveFile(cache0,x0);
-							saveFile(cache1,x1);
-							saveFile(cache2,x2);
-							saveFile(cache3,x3);
-							saveFile(cache4,x4);
-							
-						} catch (FileNotFoundException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
+		//Larry's code
+        story=new Story(0);
+		InputStream x0=getResources().openRawResource(story.promptFileNames.get(0));
+		InputStream x1=getResources().openRawResource(story.promptFileNames.get(1));
+		InputStream x2=getResources().openRawResource(story.promptFileNames.get(2));
+		InputStream x3=getResources().openRawResource(story.promptFileNames.get(3));
+		InputStream x4=getResources().openRawResource(story.promptFileNames.get(4));
+		try {
+			saveFile("cache0",x0);
+			saveFile("cache1",x1);
+			saveFile("cache2",x2);
+			saveFile("cache3",x3);
+			saveFile("cache4",x4);
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 						
-		files.add(Environment.getExternalStorageDirectory().getAbsolutePath() + "/cache0.3gp");
-		files.add(Environment.getExternalStorageDirectory().getAbsolutePath() + "/res0.3gp");
-		files.add(Environment.getExternalStorageDirectory().getAbsolutePath() + "/cache1.3gp");
-		files.add(Environment.getExternalStorageDirectory().getAbsolutePath() + "/res1.3gp");
-		files.add(Environment.getExternalStorageDirectory().getAbsolutePath() + "/cache2.3gp");
-		files.add(Environment.getExternalStorageDirectory().getAbsolutePath() + "/res2.3gp");
-		files.add(Environment.getExternalStorageDirectory().getAbsolutePath() + "/cache3.3gp");
-		files.add(Environment.getExternalStorageDirectory().getAbsolutePath() + "/res3.3gp");
-		files.add(Environment.getExternalStorageDirectory().getAbsolutePath() + "/cache4.3gp");
-		files.add(Environment.getExternalStorageDirectory().getAbsolutePath() + "/res4.3gp");
+		files[0]=Environment.getExternalStorageDirectory().getAbsolutePath() + "/cache0.3gp";
+		files[1]=Environment.getExternalStorageDirectory().getAbsolutePath() + "/res0.3gp";
+		files[2]=Environment.getExternalStorageDirectory().getAbsolutePath() + "/cache1.3gp";
+		files[3]=Environment.getExternalStorageDirectory().getAbsolutePath() + "/res1.3gp";
+		files[4]=Environment.getExternalStorageDirectory().getAbsolutePath() + "/cache2.3gp";
+		files[5]=Environment.getExternalStorageDirectory().getAbsolutePath() + "/res2.3gp";
+		files[6]=Environment.getExternalStorageDirectory().getAbsolutePath() + "/cache3.3gp";
+		files[7]=Environment.getExternalStorageDirectory().getAbsolutePath() + "/res3.3gp";
+		files[8]=Environment.getExternalStorageDirectory().getAbsolutePath() + "/cache4.3gp";
+		files[9]=Environment.getExternalStorageDirectory().getAbsolutePath() + "/res4.3gp";
 		if(story.promptFileNames.size()>5 || story.promptFileNames.size() == 5 )
 		{
 			InputStream x5=getResources().openRawResource(story.promptFileNames.get(0));
-			try {
-				saveFile(cache5,x5);
+			try 
+			{
+				saveFile("cache5",x5);
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			files.add(Environment.getExternalStorageDirectory().getAbsolutePath() + "/cache5.3gp");
+			files[10]=Environment.getExternalStorageDirectory().getAbsolutePath() + "/cache5.3gp";
 		}
-		
-	    
 	}
 	
 	public void saveFile(String filename,InputStream z) throws FileNotFoundException
@@ -163,9 +162,6 @@ public class Play extends ActionBarActivity {
         	}
             z.close();
             fos.close();
-            
-            Toast.makeText(this, "Save inputstream as "+ filename+"!!", Toast.LENGTH_LONG).show();
-            
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
