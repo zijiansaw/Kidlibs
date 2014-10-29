@@ -13,6 +13,7 @@ public class Story implements Serializable {
 	Vector <Prompt> myPromptList = new Vector<Prompt>();
 	Vector <Integer> promptFileNames = new Vector<Integer>();
 	Vector <String> commandFileNames = new Vector<String>();
+	Integer storyNum =0;
 	public int category;
 	
 	/**
@@ -64,60 +65,76 @@ public class Story implements Serializable {
 			//randomly choose a story from the 4 beach
 			 if(rand==0){
 				 myPromptList = getStory1();
+				 storyNum =0;
+				 
 			 }
 			 else if (rand ==1){
 				  myPromptList = getStory2();
+				  storyNum=1;
 			 }
 			 else if(rand ==2){
 				  myPromptList = getStory3();
+				  storyNum =2;
 			 }
 		}
 		//safari
 		else if(category ==1){
 			 if(rand==0){
 				  myPromptList = getSafariStory1();
+				  storyNum=0;
 			 }
 			 else if (rand ==1){
 				  myPromptList = getSafariStory2();
+				  storyNum=1;
 			 }
 			 else if(rand ==2){
 				  myPromptList = getSafariStory3();
+				  storyNum=2;
 			 }
 		}
 		//space
 		else if(category ==2){
 			 if(rand==0){
 				  myPromptList = getSpaceStory1();
+				  storyNum=0;
 			 }
 			 else if (rand ==1){
 				  myPromptList = getSpaceStory2();
+				  storyNum=1;
 			 }
 			 else if(rand ==2){
 				 myPromptList = getSpaceStory3();
+				 storyNum=2;
 			 }
 		}
 		//sports
 		else if(category ==3){
 			 if(rand==0){
 				 myPromptList = getSportsStory1();
+				 storyNum=0;
 			 }
 			 else if (rand ==1){
 				  myPromptList = getSportsStory2();
+				  storyNum=1;
 			 }
 			 else if(rand ==2){
 				  myPromptList = getSportsStory3();
+				  storyNum=2;
 			 }
 		}
 		//zoo
 		else if(category ==4){
 			 if(rand==0){
 				 myPromptList = getZooStory1();
+				 storyNum=0;
 			 }
 			 else if (rand ==1){
 				 myPromptList = getZooStory2();
+				 storyNum=1;
 			 }
 			 else if(rand ==2){
 				 myPromptList = getZooStory3();
+				 storyNum=2;
 			 }
 		}
 	}

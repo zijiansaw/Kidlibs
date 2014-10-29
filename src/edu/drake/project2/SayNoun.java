@@ -33,6 +33,7 @@ public class SayNoun extends ActionBarActivity {
 	Story story;
 	TextView txtLabel;
 	int category;
+	ImageButton micBtn;
 	
 
 	@Override
@@ -42,6 +43,7 @@ public class SayNoun extends ActionBarActivity {
 		setContentView(R.layout.activity_say_noun);
 
 		int category = getIntent().getIntExtra("category", -1);
+		message("categoy"+ category);
 
 		//check to see if category was passed correctly
 		if(category <0){
@@ -88,6 +90,7 @@ public class SayNoun extends ActionBarActivity {
 
 	public void startRecording(){
 		//start recording
+		//micBtn.setEnabled(false);
 		myAudioRecorder = new MediaRecorder();
 		Log.i("Audio", "created myAudioRecorder");
 		myAudioRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
@@ -108,6 +111,7 @@ public class SayNoun extends ActionBarActivity {
 
 	//stops the recording
 	public void stopRecording(){
+		//micBtn.setEnabled(true);
 		myAudioRecorder.stop();
 		myAudioRecorder.release();
 		myAudioRecorder  = null;
@@ -146,10 +150,10 @@ public class SayNoun extends ActionBarActivity {
 
 	public void next(){
 		ImageView image = (ImageView) findViewById(R.id.progress);
-		int progress[] = {getResources().getIdentifier("drawable/dog3", null, getPackageName()),
-				getResources().getIdentifier("drawable/dog4", null, getPackageName()),
-				getResources().getIdentifier("drawable/dog5", null, getPackageName()),
-				getResources().getIdentifier("drawable/dog6", null, getPackageName())};
+		int progress[] = {getResources().getIdentifier("drawable/progress_button_2", null, getPackageName()),
+				getResources().getIdentifier("drawable/progress_button_3", null, getPackageName()),
+				getResources().getIdentifier("drawable/progress_button_4", null, getPackageName()),
+				getResources().getIdentifier("drawable/progress_button_5", null, getPackageName())};
 
 		if(i<4){
 			i++;

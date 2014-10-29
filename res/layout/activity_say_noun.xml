@@ -58,13 +58,5 @@
         android:textAppearance="?android:attr/textAppearanceLargeInverse"
         android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="100dp"
-        android:layout_height="60dp"
-        android:layout_below="@+id/imageButton1"
-        android:layout_centerHorizontal="true"
-        android:onClick="next"
-        android:text="Next" />
 
 </RelativeLayout>

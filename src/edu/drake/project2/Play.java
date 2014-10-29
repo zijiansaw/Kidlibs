@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.util.Vector;
 
 import android.support.v7.app.ActionBarActivity;
+import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
@@ -26,7 +27,7 @@ public class Play extends ActionBarActivity {
 	Button playBtn;
     Button pauseBtn;
     int audioindex;
-   	String[] files=new String[12];
+   	String[] files=new String[11];
     MediaPlayer mediaPlayer;
     Story story;
     Vector <Integer> promptFileNames = new Vector<Integer>();
@@ -98,10 +99,12 @@ public class Play extends ActionBarActivity {
         getActionBar().hide();
 		
         int category = getIntent().getIntExtra("storyCategory", -1);
-		//story = (Story) getIntent().getSerializableExtra("story");
+      
         int storyNum = getIntent().getIntExtra("storyNum", -1);
-        if(storyNum<0){
-        	System.out.println("storyNum not passed correctly");
+        
+        message("category "+category+" story num: "+storyNum);
+        if(storyNum<0 || category < 0){
+        	message("story num was not passed correctly");
         }
 	    
 	    //setup the vector of filenames to play
@@ -109,18 +112,21 @@ public class Play extends ActionBarActivity {
 	    //TODO: Also record a snippet of silence to set as beach1_3, change beach1_3 and beach1_4
 	    
 		//Larry's code
-        story=new Story(category, storyNum);
-		InputStream x0=getResources().openRawResource(story.promptFileNames.get(0));
-		InputStream x1=getResources().openRawResource(story.promptFileNames.get(1));
-		InputStream x2=getResources().openRawResource(story.promptFileNames.get(2));
-		InputStream x3=getResources().openRawResource(story.promptFileNames.get(3));
-		InputStream x4=getResources().openRawResource(story.promptFileNames.get(4));
+        promptFileNames.clear();
+        getStory(category, storyNum);
+		InputStream x0=getResources().openRawResource(promptFileNames.get(0));
+		InputStream x1=getResources().openRawResource(promptFileNames.get(1));
+		InputStream x2=getResources().openRawResource(promptFileNames.get(2));
+		InputStream x3=getResources().openRawResource(promptFileNames.get(3));
+		InputStream x4=getResources().openRawResource(promptFileNames.get(4));
+		InputStream x5=getResources().openRawResource(promptFileNames.get(5));
 		try {
 			saveFile("cache0",x0);
 			saveFile("cache1",x1);
 			saveFile("cache2",x2);
 			saveFile("cache3",x3);
 			saveFile("cache4",x4);
+			saveFile("cache5",x5);
 			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -137,18 +143,15 @@ public class Play extends ActionBarActivity {
 		files[7]=Environment.getExternalStorageDirectory().getAbsolutePath() + "/res3.3gp";
 		files[8]=Environment.getExternalStorageDirectory().getAbsolutePath() + "/cache4.3gp";
 		files[9]=Environment.getExternalStorageDirectory().getAbsolutePath() + "/res4.3gp";
-		if(story.promptFileNames.size()>5 || story.promptFileNames.size() == 5 )
-		{
-			InputStream x5=getResources().openRawResource(story.promptFileNames.get(0));
-			try 
-			{
-				saveFile("cache5",x5);
-			} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			files[10]=Environment.getExternalStorageDirectory().getAbsolutePath() + "/cache5.3gp";
-		}
+		files[10]=Environment.getExternalStorageDirectory().getAbsolutePath() + "/cache5.3gp";
+	}
+	//method for showing message to user
+	public void message(String message){
+		Context context = getApplicationContext();
+		CharSequence text = message;
+		int duration = Toast.LENGTH_SHORT;
+		Toast toast = Toast.makeText(context, text, duration);
+		toast.show();
 	}
 	
 	public void saveFile(String filename,InputStream z) throws FileNotFoundException
@@ -208,9 +211,10 @@ public class Play extends ActionBarActivity {
 
 				promptFileNames.add(R.raw.beach1_1);
 				promptFileNames.add(R.raw.beach1_2);
-				//TODO: promptFileNames.add(R.raw.beach1_);
+				promptFileNames.add(R.raw.silent);
 				promptFileNames.add(R.raw.beach1_3);
 				promptFileNames.add(R.raw.beach1_4);
+				promptFileNames.add(R.raw.silent);
 				
 			}else if (num ==1){
 
@@ -219,9 +223,10 @@ public class Play extends ActionBarActivity {
 				promptFileNames.add(R.raw.beach2_3);
 				promptFileNames.add(R.raw.beach2_4);
 				promptFileNames.add(R.raw.beach2_5);
-				
+				promptFileNames.add(R.raw.silent);
 				
 			}else if (num ==2){
+				promptFileNames.add(R.raw.silent);
 				promptFileNames.add(R.raw.beach3_1);
 				promptFileNames.add(R.raw.beach3_2);
 				promptFileNames.add(R.raw.beach3_3);
@@ -236,6 +241,7 @@ public class Play extends ActionBarActivity {
 				promptFileNames.add(R.raw.safari1_3);
 				promptFileNames.add(R.raw.safari1_4);
 				promptFileNames.add(R.raw.safari1_5);
+				promptFileNames.add(R.raw.safari1_6);
 				
 			}else if (num ==1){
 
@@ -244,10 +250,12 @@ public class Play extends ActionBarActivity {
 				promptFileNames.add(R.raw.safari2_3);
 				promptFileNames.add(R.raw.safari2_4);
 				promptFileNames.add(R.raw.safari2_5);
+				promptFileNames.add(R.raw.silent);
 				
 			}else if (num ==2){
 				promptFileNames.add(R.raw.safari3_1);
 				promptFileNames.add(R.raw.safari3_2);
+				promptFileNames.add(R.raw.silent);
 				promptFileNames.add(R.raw.safari3_3);
 				promptFileNames.add(R.raw.safari3_4);
 				promptFileNames.add(R.raw.safari3_5);
@@ -261,6 +269,7 @@ public class Play extends ActionBarActivity {
 				promptFileNames.add(R.raw.space1_3);
 				promptFileNames.add(R.raw.space1_4);
 				promptFileNames.add(R.raw.space1_5);
+				promptFileNames.add(R.raw.space1_6);
 				
 			}else if (num ==1){
 
@@ -269,6 +278,7 @@ public class Play extends ActionBarActivity {
 				promptFileNames.add(R.raw.space2_3);
 				promptFileNames.add(R.raw.space2_4);
 				promptFileNames.add(R.raw.space2_5);
+				promptFileNames.add(R.raw.space2_6);
 			}else if (num ==2){
 
 				promptFileNames.add(R.raw.space3_1);
@@ -276,6 +286,7 @@ public class Play extends ActionBarActivity {
 				promptFileNames.add(R.raw.space3_3);
 				promptFileNames.add(R.raw.space3_4);
 				promptFileNames.add(R.raw.space3_5);
+				promptFileNames.add(R.raw.space3_6);
 			}
 		}
 		else if(cat ==3){
@@ -286,14 +297,14 @@ public class Play extends ActionBarActivity {
 				promptFileNames.add(R.raw.sports1_3);
 				promptFileNames.add(R.raw.sports1_4);
 				promptFileNames.add(R.raw.sports1_5);
-				
+				promptFileNames.add(R.raw.silent);
 			}else if (num ==1){
-
 				promptFileNames.add(R.raw.sports2_1);
 				promptFileNames.add(R.raw.sports2_2);
 				promptFileNames.add(R.raw.sports2_3);
 				promptFileNames.add(R.raw.sports2_4);
 				promptFileNames.add(R.raw.sports2_5);
+				promptFileNames.add(R.raw.silent);
 				
 			}else if (num ==2){
 				promptFileNames.add(R.raw.sports3_1);
@@ -301,6 +312,7 @@ public class Play extends ActionBarActivity {
 				promptFileNames.add(R.raw.sports3_3);
 				promptFileNames.add(R.raw.sports3_4);
 				promptFileNames.add(R.raw.sports3_5);
+				promptFileNames.add(R.raw.silent);
 			}
 		}
 		else if (cat==4){
@@ -311,6 +323,7 @@ public class Play extends ActionBarActivity {
 				promptFileNames.add(R.raw.zoo1_3);
 				promptFileNames.add(R.raw.zoo1_4);
 				promptFileNames.add(R.raw.zoo1_5);
+				promptFileNames.add(R.raw.silent);
 				
 			}else if (num ==1){
 
@@ -319,13 +332,14 @@ public class Play extends ActionBarActivity {
 				promptFileNames.add(R.raw.zoo2_3);
 				promptFileNames.add(R.raw.zoo2_4);
 				promptFileNames.add(R.raw.zoo2_5);
+				promptFileNames.add(R.raw.zoo2_6);
 			}else if (num ==2){
-
 				promptFileNames.add(R.raw.zoo3_1);
 				promptFileNames.add(R.raw.zoo3_2);
 				promptFileNames.add(R.raw.zoo3_3);
 				promptFileNames.add(R.raw.zoo3_4);
 				promptFileNames.add(R.raw.zoo3_5);
+				promptFileNames.add(R.raw.zoo3_6);
 			}
 		}
 	}
