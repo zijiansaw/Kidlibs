@@ -193,7 +193,7 @@ public class Story implements Serializable {
 	}
 	public Vector<Prompt> getStory3(){
 		Prompt prompt1 = new Prompt("a color!", 0);
-		Prompt prompt2 = new Prompt("your favoite kind of sandwich!", 1);
+		Prompt prompt2 = new Prompt("your favorite kind of sandwich!", 1);
 		Prompt prompt3 = new Prompt("something you wear when it's warm outside!", 2);
 		Prompt prompt4 = new Prompt("something cold you like to eat in the summer!", 3);
 		Prompt prompt5 = new Prompt("a number!", 4);
@@ -439,7 +439,7 @@ public class Story implements Serializable {
 		Prompt prompt1 = new Prompt("a vegetable!", 0);
 		Prompt prompt2 = new Prompt("your favorite ice cream sundae topping!", 1);
 		Prompt prompt3 = new Prompt("the name of a farm animal!", 2);
-		Prompt prompt4 = new Prompt("your favoite restaurant!", 3);
+		Prompt prompt4 = new Prompt("your favorite restaurant!", 3);
 		Prompt prompt5 = new Prompt("something you use to bake a cake!", 4);
 		Vector<Prompt> mySportsStory = new Vector<Prompt>();
 		mySportsStory.add(prompt1);

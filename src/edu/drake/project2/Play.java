@@ -19,18 +19,21 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 
 public class Play extends ActionBarActivity {
 	
-	Button playBtn;
-    Button pauseBtn;
+	ImageButton playBtn;
+    ImageButton pauseBtn;
     int audioindex;
    	String[] files=new String[11];
     MediaPlayer mediaPlayer;
     Story story;
     Vector <Integer> promptFileNames = new Vector<Integer>();
+    int length;
+    boolean x=false;
 
 
 	public void sendMessage(View view){
@@ -42,58 +45,91 @@ public class Play extends ActionBarActivity {
 	
 	public void playAll(View view) throws IllegalArgumentException, SecurityException, IllegalStateException, IOException
 	{
-		audioindex=1;
-		mediaPlayer =  new MediaPlayer();
-		mediaPlayer.setDataSource(files[0]);
-		mediaPlayer.prepare();
-		
-		mediaPlayer.setOnCompletionListener(new OnCompletionListener()
+		if(x==false)
 		{
-		    @Override
-		    public void onCompletion(MediaPlayer medi) 
-		    {
-		    	try {
-		    		
-		    		mediaPlayer.reset();
-		    		if(audioindex==11)
-		    		{
-		    			mediaPlayer.release();
-		                mediaPlayer = null;
-		    		}
-		    		else
-		    		{
-		    			mediaPlayer.setDataSource(files[audioindex]);
-			    		mediaPlayer.prepare();
-			    		mediaPlayer.start();
-				    	audioindex+=1;
-		    		}
-		    		
-		    	} catch (IllegalArgumentException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (SecurityException e) {
-					// TODO Auto-generated catch block 
-					e.printStackTrace();
-				} catch (IllegalStateException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} 
-		     }
-		});
-		
-		mediaPlayer.start();
-		Toast.makeText(this, "Playing audio.", Toast.LENGTH_LONG).show();
+			playBtn.setVisibility(View.INVISIBLE);
+			pauseBtn.setVisibility(View.VISIBLE);
+			audioindex=1;
+			mediaPlayer =  new MediaPlayer();
+			mediaPlayer.setDataSource(files[0]);
+			mediaPlayer.prepare();
+			
+			mediaPlayer.setOnCompletionListener(new OnCompletionListener()
+			{
+			    @Override
+			    public void onCompletion(MediaPlayer medi) 
+			    {
+			    	try {
+			    		
+			    		mediaPlayer.reset();
+			    		if(audioindex==11)
+			    		{
+			    			mediaPlayer.release();
+			                mediaPlayer = null;
+			                playBtn.setVisibility(View.VISIBLE);
+			                pauseBtn.setVisibility(View.INVISIBLE);
+			                message("THE END.");
+			                x=false;
+			    		}
+			    		else
+			    		{
+			    			mediaPlayer.setDataSource(files[audioindex]);
+				    		mediaPlayer.prepare();
+				    		mediaPlayer.start();
+					    	audioindex+=1;
+			    		}
+			    		
+			    	} catch (IllegalArgumentException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (SecurityException e) {
+						// TODO Auto-generated catch block 
+						e.printStackTrace();
+					} catch (IllegalStateException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} 
+			     }
+			});
+			
+			mediaPlayer.start();
+			Toast.makeText(this, "Playing story.", Toast.LENGTH_LONG).show();
+		}
+		else
+		{
+			mediaPlayer.seekTo(length);
+			mediaPlayer.start();
+			message("Story continues...");
+			playBtn.setVisibility(View.INVISIBLE);
+			pauseBtn.setVisibility(View.VISIBLE);
+		}
 
-	}	
+	}
+	
+	public void pause(View view)
+	{
+		
+		
+		mediaPlayer.pause();
+		message("Story paused.");
+		length=mediaPlayer.getCurrentPosition();
+		x=true;
+		playBtn.setVisibility(View.VISIBLE);
+        pauseBtn.setVisibility(View.INVISIBLE);
+		
+	}
 	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_play);	
+		
+		playBtn = (ImageButton) findViewById(R.id.imageButton1);
+		pauseBtn = (ImageButton) findViewById(R.id.imageButton2);
 		
 		// hide the action bar
         getActionBar().hide();

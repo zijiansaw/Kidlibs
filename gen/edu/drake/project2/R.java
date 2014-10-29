@@ -1079,22 +1079,21 @@ containing a value of this type.
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
         public static final int background=0x7f020057;
         public static final int button_microphone=0x7f020058;
-        public static final int button_play=0x7f020059;
-        public static final int button_white_outline=0x7f02005a;
-        public static final int homebackground=0x7f02005b;
-        public static final int ic_launcher=0x7f02005c;
-        public static final int ico_mic=0x7f02005d;
-        public static final int illustration_beach=0x7f02005e;
-        public static final int kidlibs_ic_launcher=0x7f02005f;
-        public static final int mystoriesbutton=0x7f020060;
-        public static final int pause=0x7f020061;
-        public static final int play=0x7f020062;
-        public static final int progress_button_1=0x7f020063;
-        public static final int progress_button_2=0x7f020064;
-        public static final int progress_button_3=0x7f020065;
-        public static final int progress_button_4=0x7f020066;
-        public static final int progress_button_5=0x7f020067;
-        public static final int tellastorybutton=0x7f020068;
+        public static final int button_pause=0x7f020059;
+        public static final int button_play=0x7f02005a;
+        public static final int button_white_outline=0x7f02005b;
+        public static final int homebackground=0x7f02005c;
+        public static final int ic_launcher=0x7f02005d;
+        public static final int ico_mic=0x7f02005e;
+        public static final int illustration_beach=0x7f02005f;
+        public static final int kidlibs_ic_launcher=0x7f020060;
+        public static final int mystoriesbutton=0x7f020061;
+        public static final int progress_button_1=0x7f020062;
+        public static final int progress_button_2=0x7f020063;
+        public static final int progress_button_3=0x7f020064;
+        public static final int progress_button_4=0x7f020065;
+        public static final int progress_button_5=0x7f020066;
+        public static final int tellastorybutton=0x7f020067;
     }
     public static final class id {
         public static final int action_bar=0x7f06001c;
