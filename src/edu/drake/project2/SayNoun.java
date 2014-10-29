@@ -38,12 +38,15 @@ public class SayNoun extends ActionBarActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		message("in onCreate of SayNoun");
+		//message("in onCreate of SayNoun");
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_say_noun);
 
+		// hide the action bar
+        getActionBar().hide();
+        
 		category = getIntent().getIntExtra("category", -1);
-		message("categoy"+ category);
+		//message("categoy"+ category);
 
 		//check to see if category was passed correctly
 		if(category <0){
@@ -58,12 +61,12 @@ public class SayNoun extends ActionBarActivity {
 		//Set the text of the label to the given prompt
 		txtLabel = (TextView)findViewById(R.id.textView1);
 		txtLabel.setText(story.myPromptList.get(i).getPromptString());
-		message("Prompt text view set");
+		//message("Prompt text view set");
 
 		setUpAudio();
 
 		//set up timer and mic button
-		ImageButton micBtn = (ImageButton) findViewById(R.id.imageButton1);
+		micBtn = (ImageButton) findViewById(R.id.imageButton1);
 
 		micBtn.setOnClickListener( new OnClickListener() {
 
@@ -90,7 +93,7 @@ public class SayNoun extends ActionBarActivity {
 
 	public void startRecording(){
 		//start recording
-		//micBtn.setEnabled(false);
+		micBtn.setClickable(false);
 		myAudioRecorder = new MediaRecorder();
 		Log.i("Audio", "created myAudioRecorder");
 		myAudioRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
@@ -111,7 +114,7 @@ public class SayNoun extends ActionBarActivity {
 
 	//stops the recording
 	public void stopRecording(){
-		//micBtn.setEnabled(true);
+		micBtn.setClickable(true);
 		myAudioRecorder.stop();
 		myAudioRecorder.release();
 		myAudioRecorder  = null;

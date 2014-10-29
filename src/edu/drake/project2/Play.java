@@ -72,7 +72,7 @@ public class Play extends ActionBarActivity {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} catch (SecurityException e) {
-					// TODO Auto-generated catch block
+					// TODO Auto-generated catch block 
 					e.printStackTrace();
 				} catch (IllegalStateException e) {
 					// TODO Auto-generated catch block
@@ -102,7 +102,7 @@ public class Play extends ActionBarActivity {
       
         int storyNum = getIntent().getIntExtra("storyNum", -1);
         
-        message("category "+category+" story num: "+storyNum);
+        //message("category "+category+" story num: "+storyNum);
         if(storyNum<0 || category < 0){
         	message("story num was not passed correctly");
         }

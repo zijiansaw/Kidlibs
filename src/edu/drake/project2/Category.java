@@ -9,23 +9,24 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class Category extends ActionBarActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		message("created Category screen");
+		//message("created Category screen");
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_category);
 		
 		
 		//create buttons and onClickListeners for each categories
-		Button beachBtn = (Button) findViewById(R.id.button3);
-		Button safariBtn = (Button) findViewById(R.id.button5);
-		Button spaceBtn = (Button) findViewById(R.id.button4);
-		Button sportsBtn = (Button) findViewById(R.id.button1);
-		Button zooBtn = (Button) findViewById(R.id.button2);
+		ImageButton beachBtn = (ImageButton) findViewById(R.id.imageButton1);
+		ImageButton safariBtn = (ImageButton) findViewById(R.id.imageButton2);
+		ImageButton spaceBtn = (ImageButton) findViewById(R.id.imageButton3);
+		ImageButton sportsBtn = (ImageButton) findViewById(R.id.imageButton4);
+		ImageButton zooBtn = (ImageButton) findViewById(R.id.imageButton5);
 
 		beachBtn.setOnClickListener( new OnClickListener() {
 
@@ -33,7 +34,7 @@ public class Category extends ActionBarActivity {
 			public void onClick(View arg0) {
 				Intent intent = new Intent(getApplicationContext(), SayNoun.class);
 				intent.putExtra("category", 0);
-				message("category 0, intent set up");
+				//message("category 0, intent set up");
 				startActivity(intent);
 			}
 			
