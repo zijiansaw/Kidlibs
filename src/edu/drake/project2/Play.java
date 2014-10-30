@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.util.Vector;
 
 import android.support.v7.app.ActionBarActivity;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -36,11 +37,24 @@ public class Play extends ActionBarActivity {
     boolean x=false;
 
 
-	public void sendMessage(View view){
-		Intent intent = new Intent(this, Name.class);
+	
+	
+	public void sendMessage2(View view){
+		Intent intent = new Intent(this, MainActivity.class);
 		startActivity(intent);
 	}
 	
+	public void inTheNewVersion(View view) {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(
+                Play.this);
+        // Setting Dialog Title
+        alertDialog.setTitle("Can't save?");
+        // Setting Dialog Message
+        alertDialog.setMessage("The saving option will only be included in Version 2.0. Sorry about this.");
+        // Setting Icon to Dialog
+        alertDialog.setIcon(R.drawable.exit_icon);
+        alertDialog.show();
+	}
 	
 	
 	public void playAll(View view) throws IllegalArgumentException, SecurityException, IllegalStateException, IOException

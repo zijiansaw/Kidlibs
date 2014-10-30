@@ -18,19 +18,9 @@
        android:layout_centerHorizontal="true"
        android:layout_marginTop="34dp"
        android:gravity="center"
-       android:text="Do you want to listen to your story?"
+       android:text="Play your Story!"
        android:textAppearance="?android:attr/textAppearanceLargeInverse"
        android:textStyle="bold" />
-   
-   <ImageButton
-       android:id="@+id/imageButton3"
-       android:layout_width="match_parent"
-       android:layout_height="50dp"
-       android:layout_alignLeft="@+id/textView1"
-       android:layout_below="@+id/imageButton1"
-       android:layout_marginTop="14dp"
-       android:background="@drawable/button_white_outline"
-       android:onClick="sendMessage" />
 
    <ImageButton
        android:id="@+id/imageButton1"
@@ -50,5 +40,47 @@
        android:background="@drawable/button_pause"
        android:visibility="invisible"
        android:onClick="pause" />
+
+   <ImageButton
+       android:id="@+id/imageButton3"
+       android:layout_width="match_parent"
+       android:layout_height="50dp"
+       
+       android:layout_centerHorizontal="true"
+       android:layout_marginTop="430dp"
+       android:background="@drawable/button_white_outline"
+       android:onClick="inTheNewVersion" />
+
+   <TextView
+       android:id="@+id/textView2"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="Save my Story!"
+       android:textAppearance="?android:attr/textAppearanceLargeInverse"
+       android:textColor="#F06D2F"
+       android:textStyle="bold"
+       android:gravity="center"
+       android:layout_marginTop="440dp" />
+
+   <TextView
+       android:id="@+id/textView3"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_alignTop="@+id/ImageButton01"
+       android:gravity="center"
+       android:text="New Story"
+       android:layout_alignParentBottom="true"
+       android:textAppearance="?android:attr/textAppearanceLargeInverse"
+       android:textColor="#F06D2F"
+       android:textStyle="bold" />
+
+   <ImageButton
+       android:id="@+id/ImageButton01"
+       android:layout_width="match_parent"
+       android:layout_height="50dp"
+       android:layout_alignParentBottom="true"
+       android:layout_alignRight="@+id/textView3"
+       android:background="@drawable/button_white_outline"
+       android:onClick="sendMessage2" />
 
 </RelativeLayout>

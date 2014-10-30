@@ -7,17 +7,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="edu.drake.project2.MyLibrary" 
-    android:background="@drawable/background">
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
-        android:gravity="center"
-        android:text="My Library"
-        android:textAppearance="?android:attr/textAppearanceLargeInverse" />
+    android:background="@drawable/littlelibs_mockup_storybook"
+    android:onClick="sendMessage">
 
 </RelativeLayout>

@@ -16,7 +16,7 @@
         android:layout_alignLeft="@+id/makestory"
         android:layout_alignParentBottom="true"
         android:background="@android:color/transparent"
-        android:onClick="sendMessage2"
+        android:onClick="inTheNewVersion"
         android:src="@drawable/mystoriesbutton" />
 
     <ImageButton

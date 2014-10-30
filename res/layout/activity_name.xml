@@ -34,6 +34,7 @@
         android:layout_marginTop="64dp"
         android:ems="10"
         android:imeOptions="actionDone"
-        android:inputType="text" />       
+        android:inputType="text" />
+
 
 </RelativeLayout>
