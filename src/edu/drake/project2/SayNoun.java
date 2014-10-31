@@ -3,6 +3,7 @@ package edu.drake.project2;
 
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Vector;
 
 import android.content.Context;
@@ -29,13 +30,13 @@ public class SayNoun extends ActionBarActivity {
 	private String outputFile0, outputFile1, outputFile2, outputFile3, outputFile4, storyOutputFile, outputFileName = null;
 	private MediaRecorder myAudioRecorder;
 	Vector <String> outputFileNames = new Vector <String>();
-	int i=0, numPrompts=0, storyNum;
+	int i=0, numPrompts=0, storyNum, command;
 	Story story;
 	TextView txtLabel;
 	int category;
 	ImageButton micBtn;
+	InputStream x;
 	
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		//message("in onCreate of SayNoun");
@@ -62,6 +63,8 @@ public class SayNoun extends ActionBarActivity {
 		txtLabel = (TextView)findViewById(R.id.textView1);
 		txtLabel.setText(story.myPromptList.get(i).getPromptString());
 		//message("Prompt text view set");
+		
+		x=getResources().openRawResource(story.commandFileNames.get(i));
 
 		setUpAudio();
 
@@ -109,7 +112,7 @@ public class SayNoun extends ActionBarActivity {
 			Log.e(LOG_TAG, "prepare() failed");
 		}
 		myAudioRecorder.start(); 
-		message("Started Recording"); 
+		message("Recording started. Wait for awhile."); 
 	}
 
 	//stops the recording
@@ -168,8 +171,8 @@ public class SayNoun extends ActionBarActivity {
 			Log.i("next", "in the else statment");
 
 			//go to the play my story screen
+			finish();
 			Intent intent = new Intent(getApplicationContext(), Play.class);
-
 			intent.putExtra("storyNum", storyNum);
 			intent.putExtra("storyCategory", category);
 			startActivity(intent);

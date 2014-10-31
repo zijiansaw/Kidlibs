@@ -36,10 +36,8 @@ public class Play extends ActionBarActivity {
     int length;
     boolean x=false;
 
-
-	
-	
 	public void sendMessage2(View view){
+		finish();
 		Intent intent = new Intent(this, MainActivity.class);
 		startActivity(intent);
 	}
@@ -50,7 +48,7 @@ public class Play extends ActionBarActivity {
         // Setting Dialog Title
         alertDialog.setTitle("Can't save?");
         // Setting Dialog Message
-        alertDialog.setMessage("The saving option will only be included in Version 2.0. Sorry about this.");
+        alertDialog.setMessage("The saving option will be included in Version 2.0. Sorry about this.");
         // Setting Icon to Dialog
         alertDialog.setIcon(R.drawable.exit_icon);
         alertDialog.show();
@@ -195,6 +193,7 @@ public class Play extends ActionBarActivity {
 		files[9]=Environment.getExternalStorageDirectory().getAbsolutePath() + "/res4.3gp";
 		files[10]=Environment.getExternalStorageDirectory().getAbsolutePath() + "/cache5.3gp";
 	}
+	
 	//method for showing message to user
 	public void message(String message){
 		Context context = getApplicationContext();
@@ -227,7 +226,6 @@ public class Play extends ActionBarActivity {
         
 	}
 	
-
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.

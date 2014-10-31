@@ -71,10 +71,10 @@ public class MainActivity extends ActionBarActivity {
         alertDialog.setPositiveButton("YES",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                    	android.os.Process.killProcess(android.os.Process.myPid());
-                    	 //finish();
-                    	 //moveTaskToBack(true);
-                    	 //System.exit(0);
+                    	 //android.os.Process.killProcess(android.os.Process.myPid());
+                    	 finish();
+                    	 moveTaskToBack(true);
+                    	 System.exit(0);
                     }
                 });
         // Setting Negative "NO" Button
@@ -95,7 +95,7 @@ public class MainActivity extends ActionBarActivity {
         // Setting Dialog Title
         alertDialog.setTitle("Can't see My Stories?");
         // Setting Dialog Message
-        alertDialog.setMessage("The My Stories option will only be included in Version 2.0. Sorry about this.");
+        alertDialog.setMessage("The My Stories option will be included in Version 2.0. Sorry about this.");
         // Setting Icon to Dialog
         alertDialog.setIcon(R.drawable.exit_icon);
         alertDialog.show();

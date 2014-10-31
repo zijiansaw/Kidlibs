@@ -32,6 +32,7 @@ public class Category extends ActionBarActivity {
 
 			@Override
 			public void onClick(View arg0) {
+				finish();
 				Intent intent = new Intent(getApplicationContext(), SayNoun.class);
 				intent.putExtra("category", 0);
 				//message("category 0, intent set up");
@@ -43,6 +44,7 @@ public class Category extends ActionBarActivity {
 
 			@Override
 			public void onClick(View arg0) {
+				finish();
 				Intent intent = new Intent(getApplicationContext(), SayNoun.class);
 				intent.putExtra("category", 1);
 				startActivity(intent);
@@ -53,6 +55,7 @@ public class Category extends ActionBarActivity {
 
 			@Override
 			public void onClick(View arg0) {
+				finish();
 				Intent intent = new Intent(getApplicationContext(), SayNoun.class);
 				intent.putExtra("category", 2);
 				startActivity(intent);
@@ -63,6 +66,7 @@ public class Category extends ActionBarActivity {
 
 			@Override
 			public void onClick(View arg0) {
+				finish();
 				Intent intent = new Intent(getApplicationContext(), SayNoun.class);
 				intent.putExtra("category", 3);
 				startActivity(intent);
@@ -73,6 +77,7 @@ public class Category extends ActionBarActivity {
 
 			@Override
 			public void onClick(View arg0) {
+				finish();
 				Intent intent = new Intent(getApplicationContext(), SayNoun.class);
 				intent.putExtra("category", 4);
 				startActivity(intent);

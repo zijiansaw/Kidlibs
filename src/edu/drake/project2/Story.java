@@ -12,7 +12,7 @@ public class Story implements Serializable {
 	 */
 	Vector <Prompt> myPromptList = new Vector<Prompt>();
 	Vector <Integer> promptFileNames = new Vector<Integer>();
-	Vector <String> commandFileNames = new Vector<String>();
+	Vector <Integer> commandFileNames = new Vector<Integer>();
 	Integer storyNum =0;
 	public int category;
 	
@@ -147,11 +147,11 @@ public class Story implements Serializable {
 		Prompt prompt4 = new Prompt("your favorite flavor of ice cream!", 3);
 		Prompt prompt5 = new Prompt("an animal that likes the cold!", 4);
 		Vector<Prompt> myBeachStory = new Vector<Prompt>();
-		commandFileNames.add("raw/beachc1_1");
-		commandFileNames.add("raw/beachc1_2");
-		commandFileNames.add("raw/beachc1_3");
-		commandFileNames.add("raw/beachc1_4");
-		commandFileNames.add("raw/beachc1_5");
+		commandFileNames.add(R.raw.beachc1_1);
+		commandFileNames.add(R.raw.beachc1_2);
+		commandFileNames.add(R.raw.beachc1_3);
+		commandFileNames.add(R.raw.beachc1_4);
+		commandFileNames.add(R.raw.beachc1_5);
 		
 		myBeachStory.add(prompt1);
 		myBeachStory.add(prompt2);
@@ -178,11 +178,11 @@ public class Story implements Serializable {
 		myBeachStory.add(prompt3);
 		myBeachStory.add(prompt4);
 		myBeachStory.add(prompt5);
-		commandFileNames.add("raw/beachc2_1");
-		commandFileNames.add("raw/beachc2_2");
-		commandFileNames.add("raw/beachc2_3");
-		commandFileNames.add("raw/beachc2_4");
-		commandFileNames.add("raw/beachc2_5");
+		commandFileNames.add(R.raw.beachc2_1);
+		commandFileNames.add(R.raw.beachc2_2);
+		commandFileNames.add(R.raw.beachc2_3);
+		commandFileNames.add(R.raw.beachc2_4);
+		commandFileNames.add(R.raw.beachc2_5);
 		promptFileNames.add(R.raw.beach2_1);
 		promptFileNames.add(R.raw.beach2_2);
 		promptFileNames.add(R.raw.beach2_3);
@@ -203,11 +203,11 @@ public class Story implements Serializable {
 		myBeachStory.add(prompt3);
 		myBeachStory.add(prompt4);
 		myBeachStory.add(prompt5);
-		commandFileNames.add("raw/beachc3_1");
-		commandFileNames.add("raw/beachc3_2");
-		commandFileNames.add("raw/beachc3_3");
-		commandFileNames.add("raw/beachc3_4");
-		commandFileNames.add("raw/beachc3_5");
+		commandFileNames.add(R.raw.beachc3_1);
+		commandFileNames.add(R.raw.beachc3_2);
+		commandFileNames.add(R.raw.beachc3_3);
+		commandFileNames.add(R.raw.beachc3_4);
+		commandFileNames.add(R.raw.beachc3_5);
 		promptFileNames.add(R.raw.silent);
 		promptFileNames.add(R.raw.beach3_1);
 		promptFileNames.add(R.raw.beach3_2);
@@ -229,11 +229,11 @@ public class Story implements Serializable {
 		mySafariStory.add(prompt4);
 		mySafariStory.add(prompt5);
 		
-		commandFileNames.add("raw/safaric1_1.mp3");
-		commandFileNames.add("raw/safaric1_2.mp3");
-		commandFileNames.add("raw/safaric1_3.mp3");
-		commandFileNames.add("raw/sarafic1_4.mp3");
-		commandFileNames.add("raw/safaric1_5.mp3");
+		commandFileNames.add(R.raw.safaric1_1);
+		commandFileNames.add(R.raw.safaric1_2);
+		commandFileNames.add(R.raw.safaric1_3);
+		commandFileNames.add(R.raw.safaric1_4);
+		commandFileNames.add(R.raw.safaric1_5);
 		
 		promptFileNames.add(R.raw.safari1_1);
 		promptFileNames.add(R.raw.safari1_2);
@@ -256,11 +256,11 @@ public class Story implements Serializable {
 		mySafariStory.add(prompt4);
 		mySafariStory.add(prompt5);
 		
-		commandFileNames.add("raw/safaric2_1.mp3");
-		commandFileNames.add("raw/safaric2_2.mp3");
-		commandFileNames.add("raw/safaric2_3.mp3");
-		commandFileNames.add("raw/sarafic2_4.mp3");
-		commandFileNames.add("raw/safaric2_5.mp3");
+		commandFileNames.add(R.raw.safaric2_1);
+		commandFileNames.add(R.raw.safaric2_2);
+		commandFileNames.add(R.raw.safaric2_3);
+		commandFileNames.add(R.raw.safaric2_4);
+		commandFileNames.add(R.raw.safaric2_5);
 		
 		promptFileNames.add(R.raw.safari2_1);
 		promptFileNames.add(R.raw.safari2_2);
@@ -284,12 +284,11 @@ public class Story implements Serializable {
 		mySafariStory.add(prompt4);
 		mySafariStory.add(prompt5);
 		
-		commandFileNames.add("raw/safaric3_1.mp3");
-		commandFileNames.add("raw/safaric3_2.mp3");
-		commandFileNames.add("raw/safaric3_3.mp3");
-		commandFileNames.add("raw/sarafic3_4.mp3");
-		commandFileNames.add("raw/safaric3_5.mp3");
-		
+		commandFileNames.add(R.raw.safaric3_1);
+		commandFileNames.add(R.raw.safaric3_2);
+		commandFileNames.add(R.raw.safaric3_3);
+		commandFileNames.add(R.raw.safaric3_4);
+		commandFileNames.add(R.raw.safaric3_5);
 		promptFileNames.add(R.raw.safari3_1);
 		promptFileNames.add(R.raw.safari3_2);
 		promptFileNames.add(R.raw.silent);
@@ -311,11 +310,11 @@ public class Story implements Serializable {
 		mySpaceStory.add(prompt4);
 		mySpaceStory.add(prompt5);
 		
-		commandFileNames.add("raw/spacec1_1.mp3");
-		commandFileNames.add("raw/spacec1_2.mp3");
-		commandFileNames.add("raw/spacec1_3.mp3");
-		commandFileNames.add("raw/spacec1_4.mp3");
-		commandFileNames.add("raw/spacec1_5.mp3");
+		commandFileNames.add(R.raw.spacec1_1);
+		commandFileNames.add(R.raw.spacec1_2);
+		commandFileNames.add(R.raw.spacec1_3);
+		commandFileNames.add(R.raw.spacec1_4);
+		commandFileNames.add(R.raw.spacec1_5);
 		
 		promptFileNames.add(R.raw.space1_1);
 		promptFileNames.add(R.raw.space1_2);
@@ -338,11 +337,11 @@ public class Story implements Serializable {
 		mySpaceStory.add(prompt4);
 		mySpaceStory.add(prompt5);
 		
-		commandFileNames.add("raw/spacec2_1.mp3");
-		commandFileNames.add("raw/spacec2_2.mp3");
-		commandFileNames.add("raw/spacec2_3.mp3");
-		commandFileNames.add("raw/spacec2_4.mp3");
-		commandFileNames.add("raw/spacec2_5.mp3");
+		commandFileNames.add(R.raw.spacec2_1);
+		commandFileNames.add(R.raw.spacec2_2);
+		commandFileNames.add(R.raw.spacec2_3);
+		commandFileNames.add(R.raw.spacec2_4);
+		commandFileNames.add(R.raw.spacec2_5);
 		
 		promptFileNames.add(R.raw.space2_1);
 		promptFileNames.add(R.raw.space2_2);
@@ -365,11 +364,11 @@ public class Story implements Serializable {
 		mySpaceStory.add(prompt4);
 		mySpaceStory.add(prompt5);
 		
-		commandFileNames.add("raw/spacec2_1.mp3");
-		commandFileNames.add("raw/spacec2_2.mp3");
-		commandFileNames.add("raw/spacec2_3.mp3");
-		commandFileNames.add("raw/spacec2_4.mp3");
-		commandFileNames.add("raw/spacec2_5.mp3");
+		commandFileNames.add(R.raw.spacec3_1);
+		commandFileNames.add(R.raw.spacec3_2);
+		commandFileNames.add(R.raw.spacec3_3);
+		commandFileNames.add(R.raw.spacec3_4);
+		commandFileNames.add(R.raw.spacec3_5);
 		
 		promptFileNames.add(R.raw.space3_1);
 		promptFileNames.add(R.raw.space3_2);
@@ -393,11 +392,11 @@ public class Story implements Serializable {
 		mySportsStory.add(prompt4);
 		mySportsStory.add(prompt5);
 		
-		commandFileNames.add("raw/sportsc1_1.mp3");
-		commandFileNames.add("raw/sportsc1_2.mp3");
-		commandFileNames.add("raw/sportsc1_3.mp3");
-		commandFileNames.add("raw/sporstc1_4.mp3");
-		commandFileNames.add("raw/sportsc1_5.mp3");
+		commandFileNames.add(R.raw.sportsc1_1);
+		commandFileNames.add(R.raw.sportsc1_2);
+		commandFileNames.add(R.raw.sportsc1_3);
+		commandFileNames.add(R.raw.sportsc1_4);
+		commandFileNames.add(R.raw.sportsc1_5);
 		
 		promptFileNames.add(R.raw.sports1_1);
 		promptFileNames.add(R.raw.sports1_2);
@@ -420,11 +419,11 @@ public class Story implements Serializable {
 		mySportsStory.add(prompt4);
 		mySportsStory.add(prompt5);
 		
-		commandFileNames.add("raw/sportsc2_1.mp3");
-		commandFileNames.add("raw/sportsc2_2.mp3");
-		commandFileNames.add("raw/sportsc2_3.mp3");
-		commandFileNames.add("raw/sporstc2_4.mp3");
-		commandFileNames.add("raw/sportsc2_5.mp3");
+		commandFileNames.add(R.raw.sportsc2_1);
+		commandFileNames.add(R.raw.sportsc2_2);
+		commandFileNames.add(R.raw.sportsc2_3);
+		commandFileNames.add(R.raw.sportsc2_4);
+		commandFileNames.add(R.raw.sportsc2_5);
 		
 		promptFileNames.add(R.raw.sports2_1);
 		promptFileNames.add(R.raw.sports2_2);
@@ -448,11 +447,11 @@ public class Story implements Serializable {
 		mySportsStory.add(prompt4);
 		mySportsStory.add(prompt5);
 		
-		commandFileNames.add("raw/sportsc3_1.mp3");
-		commandFileNames.add("raw/sportsc3_2.mp3");
-		commandFileNames.add("raw/sportsc3_3.mp3");
-		commandFileNames.add("raw/sporstc3_4.mp3");
-		commandFileNames.add("raw/sportsc3_5.mp3");
+		commandFileNames.add(R.raw.sportsc3_1);
+		commandFileNames.add(R.raw.sportsc3_2);
+		commandFileNames.add(R.raw.sportsc3_3);
+		commandFileNames.add(R.raw.sportsc3_4);
+		commandFileNames.add(R.raw.sportsc3_5);
 		
 		promptFileNames.add(R.raw.sports3_1);
 		promptFileNames.add(R.raw.sports3_2);
@@ -463,12 +462,12 @@ public class Story implements Serializable {
 		return mySportsStory;
 	}
 	public Vector<Prompt> getZooStory1(){
-		Prompt prompt1 = new Prompt("a color", 0);
+		Prompt prompt1 = new Prompt("a color!", 0);
 		Prompt prompt2 = new Prompt("a size, like 'small' or 'large'!", 1);
 		Prompt prompt3 = new Prompt("a vegetable!", 2);
 		Prompt prompt4 = new Prompt("an ocean animal!", 3);
 		Prompt prompt5 = new Prompt("something you eat for lunch!", 4);
-		Prompt prompt6 = new Prompt("the name of a city", 5);
+		Prompt prompt6 = new Prompt("the name of a city!", 5);
 		Vector<Prompt> myZooStory = new Vector<Prompt>();
 		myZooStory.add(prompt1);
 		myZooStory.add(prompt2);
@@ -477,11 +476,11 @@ public class Story implements Serializable {
 		myZooStory.add(prompt5);
 		myZooStory.add(prompt6);
 		
-		commandFileNames.add("raw/zooc1_1.mp3");
-		commandFileNames.add("raw/zooc1_2.mp3");
-		commandFileNames.add("raw/zooc1_3.mp3");
-		commandFileNames.add("raw/zooc1_4.mp3");
-		commandFileNames.add("raw/zooc1_5.mp3");
+		commandFileNames.add(R.raw.zooc1_1);
+		commandFileNames.add(R.raw.zooc1_2);
+		commandFileNames.add(R.raw.zooc1_3);
+		commandFileNames.add(R.raw.zooc1_4);
+		commandFileNames.add(R.raw.zooc1_5);
 		
 		promptFileNames.add(R.raw.zoo1_1);
 		promptFileNames.add(R.raw.zoo1_2);
@@ -504,11 +503,11 @@ public class Story implements Serializable {
 		myZooStory.add(prompt4);
 		myZooStory.add(prompt5);
 		
-		commandFileNames.add("raw/zooc2_1.mp3");
-		commandFileNames.add("raw/zooc2_2.mp3");
-		commandFileNames.add("raw/zooc2_3.mp3");
-		commandFileNames.add("raw/zooc2_4.mp3");
-		commandFileNames.add("raw/zooc2_5.mp3");
+		commandFileNames.add(R.raw.zooc2_1);
+		commandFileNames.add(R.raw.zooc2_2);
+		commandFileNames.add(R.raw.zooc2_3);
+		commandFileNames.add(R.raw.zooc2_4);
+		commandFileNames.add(R.raw.zooc2_5);
 		
 		promptFileNames.add(R.raw.zoo2_1);
 		promptFileNames.add(R.raw.zoo2_2);
@@ -531,11 +530,11 @@ public class Story implements Serializable {
 		myZooStory.add(prompt4);
 		myZooStory.add(prompt5);
 		
-		commandFileNames.add("raw/zooc3_1.mp3");
-		commandFileNames.add("raw/zooc3_2.mp3");
-		commandFileNames.add("raw/zooc3_3.mp3");
-		commandFileNames.add("raw/zooc3_4.mp3");
-		commandFileNames.add("raw/zooc3_5.mp3");
+		commandFileNames.add(R.raw.zooc3_1);
+		commandFileNames.add(R.raw.zooc3_2);
+		commandFileNames.add(R.raw.zooc3_3);
+		commandFileNames.add(R.raw.zooc3_4);
+		commandFileNames.add(R.raw.zooc3_5);
 		
 		promptFileNames.add(R.raw.zoo3_1);
 		promptFileNames.add(R.raw.zoo3_2);
